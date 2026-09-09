@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>项目经历 · 陶文洋 | 金融工程 × 数据智能</title>
+  <meta name="description" content="陶文洋的项目经历：动态多因子选股、垃圾邮件检测、机器学习增强多因子策略、光模块风险因子研究。" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== 导航 ===== -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">JT</span>
+        <span class="brand-name">陶文洋<span class="en">Jason Tao</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">首页<span class="en">Home</span></a>
+        <a href="about.html" class="nav-link">关于我<span class="en">About</span></a>
+        <a href="education.html" class="nav-link">教育背景<span class="en">Education</span></a>
+        <a href="experience.html" class="nav-link">实习经历<span class="en">Experience</span></a>
+        <a href="projects.html" class="nav-link active">项目经历<span class="en">Projects</span></a>
+        <a href="honors.html" class="nav-link">荣誉<span class="en">Honors</span></a>
+        <a href="skills.html" class="nav-link">技能<span class="en">Skills</span></a>
+        <a href="life.html" class="nav-link">生活<span class="en">Life</span></a>
+        <a href="contact.html" class="nav-link">联系<span class="en">Contact</span></a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" aria-pressed="false"><span class="zh">中</span><span class="en">EN</span></button>
+        <a class="btn btn-cocoa" href="contact.html">下载简历<span class="en">CV</span></a>
+        <button class="nav-burger" id="navBurger" aria-label="菜单">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="section-head">
+      <span class="eyebrow">Projects · 项目经历</span>
+      <h2 class="section-title">用项目说话</h2>
+      <p class="section-desc">从量化策略到机器学习，下面这些项目是我把方法落到结果上的记录。</p>
+    </div>
+
+    <!-- 筛选标签 -->
+    <div class="filters">
+      <button class="filter-tab active" data-filter="all">全部</button>
+      <button class="filter-tab" data-filter="quant">金融量化</button>
+      <button class="filter-tab" data-filter="ai">互联网 · AI</button>
+      <button class="filter-tab" data-filter="research">学术研究</button>
+    </div>
+
+    <!-- 项目网格 -->
+    <div class="grid-2">
+      <!-- ① 金融量化 -->
+      <div class="project-card" data-category="quant">
+        <span class="tag tag-blue">金融量化</span>
+        <h3>动态多因子选股与 HMM 择时量化投资策略</h3>
+        <p class="desc">构建多因子选股框架，结合隐马尔可夫模型进行市场状态识别与择时，在 JoinQuant 回测中实现稳定超额收益。</p>
+        <div class="metrics">
+          <div class="metric"><div class="num">+36.77%</div><div class="lbl">年化收益</div></div>
+          <div class="metric"><div class="num">+30.06%</div><div class="lbl">超额收益</div></div>
+          <div class="metric"><div class="num">2.22</div><div class="lbl">Sharpe</div></div>
+        </div>
+        <div class="stack"><span>Python</span><span>LightGBM</span><span>HMM</span><span>JoinQuant</span></div>
+      </div>
+
+      <!-- ② 互联网·AI -->
+      <div class="project-card" data-category="ai">
+        <span class="tag tag-brown">互联网 · AI</span>
+        <h3>基于机器学习的垃圾邮件检测研究</h3>
+        <p class="desc">基于 NTU 数据集，对比随机森林等模型进行垃圾邮件分类，完成特征工程与模型评估全流程，提炼高区分度特征。</p>
+        <div class="metrics">
+          <div class="metric"><div class="num">95.6%</div><div class="lbl">准确率</div></div>
+          <div class="metric"><div class="num">0.947</div><div class="lbl">F1 Score</div></div>
+        </div>
+        <div class="stack"><span>Python</span><span>Scikit-learn</span><span>RandomForest</span></div>
+      </div>
+
+      <!-- ③ 金融量化 -->
+      <div class="project-card" data-category="quant">
+        <span class="tag tag-blue">金融量化</span>
+        <h3>机器学习增强多因子策略</h3>
+        <p class="desc">引入 XGBoost 对因子进行非线性合成与择时，3 年回测显著跑赢基准，验证机器学习对传统多因子框架的增益。</p>
+        <div class="metrics">
+          <div class="metric"><div class="num">+246.98%</div><div class="lbl">累计收益</div></div>
+          <div class="metric"><div class="num">3Y</div><div class="lbl">回测区间</div></div>
+        </div>
+        <div class="stack"><span>Python</span><span>XGBoost</span><span>因子研究</span></div>
+      </div>
+
+      <!-- ④ 学术研究 -->
+      <div class="project-card" data-category="research">
+        <span class="tag tag-mint">学术研究</span>
+        <h3>AI 算力冲击下光模块龙头风险因子载荷动态变化</h3>
+        <p class="desc">毕业论文。以 Fama-French 五因子模型研究 AI 算力需求对光模块龙头企业风险因子载荷的影响，完成实证分析与稳健性检验。</p>
+        <div class="metrics">
+          <div class="metric"><div class="num">4 家</div><div class="lbl">龙头样本</div></div>
+          <div class="metric"><div class="num">FF5</div><div class="lbl">因子模型</div></div>
+        </div>
+        <div class="stack"><span>Stata</span><span>Fama-French</span><span>实证研究</span></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== 页脚 ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-contact">
+        <a href="mailto:tctwyoiz3456789@outlook.com">tctwyoiz3456789@outlook.com</a>
+        <a href="tel:+8617721198351">+86 177 2119 8351</a>
+        <a href="tel:+85255775372">+852 5577 5372</a>
+        <span>WeChat: tctwyoiz34</span>
+        <a href="https://www.linkedin.com/in/wenyang-tao-t55775372" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="footer-sign">感谢访问，期待与你相遇 ✦</p>
+      <p class="footer-copy">© 2026 个人求职网站</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

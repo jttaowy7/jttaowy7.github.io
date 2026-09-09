@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="AHIzmtbWmERmeCOflP6iF1">
+<head data-page-node-id="KaaKhmEzTy4ur9CXLCNJWb">
+  <meta charset="UTF-8" data-page-node-id="hUgoVMwILP6VsZIt9wfcYH" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="0uY2EYhAf0FYivYpQmBC4a" />
+  <title>陶文洋 | 生活志 - Travel & Creation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="3c8rq7F5BgTCUdLEMSHbyJ" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="MQ5QwEVNGcOfiGulmG86pQ" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" data-page-node-id="cDGe0Id0fOuBJQfz2qGI48" />
+  <style>
+    :root {
+      --coral: #EE8266;
+      --coral-light: #FFB59E;
+      --cocoa: #5C3A2E;
+      --ink: #1F1F24;
+      --muted: #5F6474;
+      --card: rgba(255, 255, 255, 0.96);
+      --glass: rgba(255, 255, 255, 0.72);
+      --shadow-sm: 0 8px 24px rgba(92, 58, 46, 0.08);
+      --shadow-md: 0 16px 40px rgba(92, 58, 46, 0.12);
+      --shadow-lg: 0 24px 60px rgba(92, 58, 46, 0.16);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(135deg, #FFF5F0 0%, #F0FAF7 45%, #F5F0FF 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      animation: drift 16s ease-in-out infinite alternate;
+    }
+    .orb-1 { width: 380px; height: 380px; background: #FFD1C2; top: -80px; right: -60px; }
+    .orb-2 { width: 320px; height: 320px; background: #C9F2E8; bottom: 10%; left: -80px; animation-duration: 20s; }
+    .orb-3 { width: 260px; height: 260px; background: #E6DDFD; top: 45%; left: 40%; animation-duration: 18s; }
+    @keyframes drift {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, -30px) scale(1.08); }
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 20px;
+      z-index: 100;
+      margin: 20px auto 0;
+      width: min(1100px, calc(100% - 40px));
+      padding: 10px 16px;
+      background: var(--glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 999px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--coral-light), var(--coral));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-link {
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: all .25s cubic-bezier(.34,1.56,.64,1);
+    }
+    .nav-link:hover { color: var(--coral); background: rgba(238,130,102,.1); }
+    .nav-link.active { color: var(--coral); font-weight: 700; }
+    .btn-resume {
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: var(--cocoa);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    main { position: relative; z-index: 1; padding: 40px 0 80px; }
+    .container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+
+    /* Section header */
+    .section { padding: 60px 0 20px; }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--coral);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section h2 {
+      font-size: 32px;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .section .sub {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+
+    /* Hobby cards */
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .hobby-card {
+      background: var(--card);
+      border-radius: 28px;
+      padding: 32px 32px 28px;
+      border: 1px solid rgba(92,58,46,.06);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all .35s cubic-bezier(.34,1.56,.64,1);
+    }
+    .hobby-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    .hobby-avatar {
+      width: 220px; height: 330px;
+      margin-bottom: 16px;
+      transition: transform .4s cubic-bezier(.34,1.56,.64,1);
+    }
+    .hobby-card:hover .hobby-avatar { transform: translateY(-10px) rotate(-2deg); }
+    .hobby-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 20px;
+      filter: drop-shadow(0 14px 24px rgba(92,58,46,.14));
+    }
+    .hobby-title { font-size: 18px; font-weight: 700; margin: 0 0 8px; }
+    .hobby-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin: 0; max-width: 320px; }
+
+    /* Travel horizontal scroll */
+    .travel-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 8px 8px 24px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .travel-scroll::-webkit-scrollbar { height: 6px; }
+    .travel-scroll::-webkit-scrollbar-track { background: rgba(92,58,46,.06); border-radius: 4px; }
+    .travel-scroll::-webkit-scrollbar-thumb { background: var(--coral-light); border-radius: 4px; }
+    .travel-photo {
+      flex: 0 0 auto;
+      width: 520px;
+      height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .travel-photo:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .travel-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .scroll-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .scroll-hint::after {
+      content: "→";
+      animation: bounceX 1s infinite;
+    }
+    @keyframes bounceX {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(4px); }
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--coral-light), var(--coral));
+      border-radius: 2px;
+    }
+    .milestone {
+      position: relative;
+      margin-bottom: 44px;
+      padding-left: 32px;
+    }
+    .milestone::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--coral);
+      box-shadow: 0 0 0 4px rgba(238,130,102,.12);
+    }
+    .milestone-card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(92,58,46,.06);
+    }
+    .milestone-date {
+      display: inline-block;
+      padding: 6px 12px;
+      background: rgba(238,130,102,.1);
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .milestone h3 {
+      font-size: 20px;
+      margin: 0 0 8px;
+    }
+    .milestone p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0 0 18px;
+      max-width: 720px;
+    }
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .metric {
+      background: rgba(238,130,102,.06);
+      padding: 8px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      color: var(--ink);
+    }
+    .metric strong { color: var(--coral); margin-right: 4px; }
+
+    /* Horizontal image gallery inside milestone */
+    .weibo-gallery {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding: 8px 4px 16px;
+      scroll-snap-type: x mandatory;
+    }
+    .weibo-gallery::-webkit-scrollbar { height: 5px; }
+    .weibo-gallery::-webkit-scrollbar-track { background: rgba(92,58,46,.06); border-radius: 4px; }
+    .weibo-gallery::-webkit-scrollbar-thumb { background: var(--coral-light); border-radius: 4px; }
+    .weibo-shot {
+      flex: 0 0 auto;
+      width: 260px;
+      max-height: 340px;
+      border-radius: 16px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      box-shadow: 0 4px 14px rgba(92,58,46,.08);
+      transition: transform .25s ease;
+    }
+    .weibo-shot:hover { transform: translateY(-4px); }
+    .weibo-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .weibo-shot.single { width: 100%; max-width: 420px; }
+
+    /* Data results */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .data-card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(92,58,46,.06);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .data-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .data-card img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
+    .data-card.wide { grid-column: span 2; }
+
+    footer {
+      text-align: center;
+      padding: 50px 0 30px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      .hobby-grid, .data-grid { grid-template-columns: 1fr; }
+      .data-card.wide { grid-column: span 1; }
+      .travel-photo { width: 85vw; height: 56vw; }
+      .nav-links { display: none; }
+      .timeline { padding-left: 18px; }
+      .milestone { padding-left: 22px; }
+    }
+  </style>
+</head>
+<body data-page-node-id="nrRTPqyIzJcFlAU9NOl7t1">
+  <div class="ambient" data-page-node-id="7ADCjlDZWS06g88glll21Z">
+    <div class="orb orb-1" data-page-node-id="8GLbUlR1JpiHl1n4BA1ToJ"></div>
+    <div class="orb orb-2" data-page-node-id="wouEN0d4JFWLSJXCRi5BE6"></div>
+    <div class="orb orb-3" data-page-node-id="B7Ok92MKd2Qj0Pd46WJ2e2"></div>
+  </div>
+
+  <nav data-page-node-id="Zg8s3pMXdG1tSOXpm6aVJR">
+    <div class="logo" data-page-node-id="5tcpGCXdqQivRKkaKaQBCr">JT</div>
+    <div class="nav-links" data-page-node-id="HfZ8FJCKUXTzL2i9PAuyB6">
+      <a class="nav-link" href="#" data-page-node-id="KHzopheU8ehwiAGkxIArtL">首页</a>
+      <a class="nav-link" href="#" data-page-node-id="QJlCQmpn7pDCFCGqpNMoqk">关于</a>
+      <a class="nav-link" href="#" data-page-node-id="pJ44HBFnpeXrxxbEFsXhRO">教育</a>
+      <a class="nav-link" href="#" data-page-node-id="MDkPu7ubs58tzxFsXYvRER">实习</a>
+      <a class="nav-link" href="#" data-page-node-id="aGMlsMDD8T9DbauAZJCqsE">项目</a>
+      <a class="nav-link" href="#" data-page-node-id="AybJNb95TqY7TgYf5AUMCf">荣誉</a>
+      <a class="nav-link" href="#" data-page-node-id="ey0GybYQPce456ZNRC0TJB">技能</a>
+      <a class="nav-link active" href="#life" data-page-node-id="WU4xnSemwaachM9cCDxHa3">生活</a>
+      <a class="nav-link" href="#" data-page-node-id="yjqYWhqmcYSQ2GA8Y9uFPA">联系</a>
+    </div>
+    <button class="btn-resume" data-page-node-id="RcGJUXHBi7AsUnjgNLZZij">下载简历</button>
+  </nav>
+
+  <main data-page-node-id="Po8Kikr59waiGGiGCDX06m">
+    <!-- Header -->
+    <section class="container section" id="life" data-page-node-id="U2J4d9qxvlc8vPvIgrKM3K">
+      <div class="eyebrow" data-page-node-id="qcZI2gHBNj4FdUpS3PbfDB">LIFE / 生活志</div>
+      <h2 data-page-node-id="8sevYrOmE2Xb8hkGAeVAER">工作之外，我也有热爱的生活</h2>
+      <p class="sub" data-page-node-id="pNIgvAvDsGx2bzxq23um4N">运动、旅行、自媒体创作——这些经历让我保持好奇、善于表达，也锻炼了内容策划与社群运营的能力。</p>
+    </section>
+
+    <!-- Hobbies -->
+    <section class="container section" style="padding-top: 10px;" data-page-node-id="APW5CRTESRMLboVdEwiD9y">
+      <div class="eyebrow" data-page-node-id="mgflMw3qWhyBBsGGkXYVmi">SPORTS / 运动</div>
+      <h2 style="font-size: 24px; margin-bottom: 28px;" data-page-node-id="8swJCRJWnT9tzFIGYfnVZY">球场上释放能量</h2>
+      <div class="hobby-grid" data-page-node-id="c8sW34RQXuA6qnmvF1LsqQ">
+        <div class="hobby-card" data-page-node-id="BsU2tgYSC2PZMyAsUdNlQR">
+          <div class="hobby-avatar" data-page-node-id="hB349gB6x8WrYOBoUGA4gd"><img src="football.png" alt="足球" data-page-node-id="gfy2KmrAfiYEBtlYGfxuFb" /></div>
+          <h3 class="hobby-title" data-page-node-id="Dq6tEnOaseJz8933vx5sO9">足球 · Football</h3>
+          <p class="hobby-desc" data-page-node-id="NPZk2iQRoUl5JkV13zfbrs">校队中场调度，享受团队配合与临门一脚。</p>
+        </div>
+        <div class="hobby-card" data-page-node-id="ayAOseuqrTlJI0FfSCAPG0">
+          <div class="hobby-avatar" data-page-node-id="b9YiOXRxzwln3gtXxQE4HK"><img src="basketball.png" alt="篮球" data-page-node-id="v3QLcD3rxCNFJmzUKKnGVF" /></div>
+          <h3 class="hobby-title" data-page-node-id="lP92g2G1L9QXtooSx4GuPy">篮球 · Basketball</h3>
+          <p class="hobby-desc" data-page-node-id="LQyyGJmYnnS4rTxD8K0mZc">周末球场常客，偏爱突破分球与盯人防守。</p>
+        </div>
+        <div class="hobby-card" data-page-node-id="OLyAyUQIgAfqpDxyyBxeRp">
+          <div class="hobby-avatar" data-page-node-id="69lQn7qD1rkC0mEl3W5A8q"><img src="tennis.png" alt="网球" data-page-node-id="nWDSwUAFcDLYqVEEpPFZAl" /></div>
+          <h3 class="hobby-title" data-page-node-id="zFUicX8FDUmGNjxiJO5fOI">网球 · Tennis</h3>
+          <p class="hobby-desc" data-page-node-id="vJ4aA0dQvLfmwjBCAbFfxA">喜欢一发制胜的干脆，也享受多拍拉锯的耐心。</p>
+        </div>
+        <div class="hobby-card" data-page-node-id="yL53Gb2uydBQpJWlWrn8me">
+          <div class="hobby-avatar" data-page-node-id="VvkObraxXDmz2rKBDCuVrX"><img src="skateboard.png" alt="滑板" data-page-node-id="O8F0hPDnQ3SRAvSXFQy7NU" /></div>
+          <h3 class="hobby-title" data-page-node-id="oJVBmtOyaHUao4gieBqMPz">滑板 · Skateboard</h3>
+          <p class="hobby-desc" data-page-node-id="pCQaBZHD0Ir6j6a3IW3l5M">街头自由的味道，摔了爬起来继续练。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel -->
+    <section class="container section" data-page-node-id="5Bf24MtwF18MWgTkotBHjP">
+      <div class="eyebrow" data-page-node-id="F6VLuGeiZ83eUIUADfN3iA">TRAVEL / 旅行</div>
+      <h2 style="font-size: 24px;" data-page-node-id="70hT4PCdBH0MMdWWSA7df5">山川湖海，脚步不停</h2>
+      <p class="sub" data-page-node-id="gfvBKiXLn0k4uFmRPQoC0J">用相机记录下那些让心脏跳得更用力的风景。</p>
+      <div class="travel-scroll" data-page-node-id="SDJ3Us51m4E0D8FyGQP6Sw">
+        <div class="travel-photo" data-page-node-id="15Q9R7WhFZID2UyAj9hDcN"><img src="life-assets/travel-renamed/travel-01.jpg" alt="川西草原与国旗" data-page-node-id="dyi5o2dyAxeWmFOgzBciae" /></div>
+        <div class="travel-photo" data-page-node-id="Zlkpfxtz9qk7jjTlOfoUbH"><img src="life-assets/travel-renamed/travel-02.jpg" alt="公路与雪山" data-page-node-id="zWQIwpCrZz4JICsmd6wirm" /></div>
+        <div class="travel-photo" data-page-node-id="0wgEDKEAGB51xtoNVF4At9"><img src="life-assets/travel-renamed/travel-03.jpg" alt="湖泊与雪山" data-page-node-id="uXSLB5fTjwY5IThrU0aAIl" /></div>
+      </div>
+      <div class="scroll-hint" data-page-node-id="xcy7ZC3BeGypbWwOhYrzqw">左右滑动查看更多</div>
+    </section>
+
+    <!-- Self-media timeline -->
+    <section class="container section" data-page-node-id="aqa6KYdswWgCjJumceRf6C">
+      <div class="eyebrow" data-page-node-id="EP568T21RUxElepFXXYi4G">CREATION / 自媒体创作</div>
+      <h2 style="font-size: 24px;" data-page-node-id="iwrOiRFYF9FdKaM5QuXGQ9">从 0 到粉丝榜第一的内容探索</h2>
+      <p class="sub" data-page-node-id="qH3PXMILypDanICWECGgyE">高中时因一档选秀节目入坑，从剪辑照片视频开始，到海外搬运、粉丝互动、系列内容运营，不到一个月成长为头部粉丝账号。</p>
+
+      <div class="timeline" data-page-node-id="5yLNyExo3r0UNLLDLXn8Ql">
+        <!-- 起点 -->
+        <div class="milestone" data-page-node-id="JBICGDMCgfm1esu0ny08Fl">
+          <div class="milestone-card" data-page-node-id="sQEQZeyzemXAzvVBokuv1F">
+            <span class="milestone-date" data-page-node-id="K25Lj6qyGgIsXGr9pxF6Ms">2020.06.06 · 起点</span>
+            <h3 data-page-node-id="xF6xS87Bq1dcrdeHS0mxDB">第一条关于"她"的创作内容</h3>
+            <p data-page-node-id="O8MRKszMuQ88iYsjOsfJlz">起初只是剪辑关于 NENE 的照片视频，没想到作品开始被更多人看到，也第一次感受到"内容能连接同好"的力量。</p>
+            <div class="metrics" data-page-node-id="v1QwbD4F7GW7EiVHpv2nTI">
+              <span class="metric" data-page-node-id="7mx9xjfWYBSG8OCDhyFpZd"><strong data-page-node-id="jkAdlVk73oU4K3Qu3HH4b4">1,494</strong>次观看</span>
+              <span class="metric" data-page-node-id="uT7VDANee2F5tIldn6jxyx"><strong data-page-node-id="HovEtPOQ5ZxI9exyzObbsW">12</strong>评论</span>
+              <span class="metric" data-page-node-id="m97AcTSQxm0rGnuMIjUVS7"><strong data-page-node-id="8EuBKvmRYIPGXaAzlJ1X9D">48</strong>点赞</span>
+            </div>
+            <div class="weibo-gallery" data-page-node-id="PvQ8Q26SXVFPIwC4CwRlVx">
+              <div class="weibo-shot single" data-page-node-id="Y7e3duY2PCyI5vk5PcFBMM"><img src="life-assets/weibo-renamed/weibo-01-first-creation.png" alt="第一条创作" data-page-node-id="5b9PLwAP1IspWXmOXbPh01" /></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 爆发 -->
+        <div class="milestone" data-page-node-id="lfU1oQyfgf8eFxEjV4pan3">
+          <div class="milestone-card" data-page-node-id="YotNZxvLQPZAxUoa4fwu9O">
+            <span class="milestone-date" data-page-node-id="KKGuYcuID97sDs40jo6vwH">2020.06.07 · 第一次爆发</span>
+            <h3 data-page-node-id="BEtj5CJDeLHCwRTb3WLDU7">第一条播放量破万、阅读量破万、点赞破千的内容</h3>
+            <p data-page-node-id="9eh0wuLFITzOwvDhHUEgaM">一条"电竞少女 NENE"的视频突然破圈，播放量和互动量都迎来第一次指数级增长，也让我意识到热点捕捉与选题的重要性。</p>
+            <div class="metrics" data-page-node-id="DEFIG0OLtJeQWSBEBYn6b2">
+              <span class="metric" data-page-node-id="eEs9dudarkmoAjkc7y9aWI"><strong data-page-node-id="UIEePgRCHNSQXLgU1qbiUJ">3.2万</strong>播放</span>
+              <span class="metric" data-page-node-id="T4ZdWWaXPWy16UDYyrbzSw"><strong data-page-node-id="cVZzarcGlsHYBKjShNtMZe">8.5万</strong>阅读</span>
+              <span class="metric" data-page-node-id="GtekYgF9KBgMCTY6x5139d"><strong data-page-node-id="UlQBwBCoojAngLKlx1nE1y">267</strong>评论</span>
+              <span class="metric" data-page-node-id="EUF3FuKgdBYOVsOyHTmWjB"><strong data-page-node-id="RMcyVDu2C1Y5kLzD2mTkLr">1,164</strong>点赞</span>
+              <span class="metric" data-page-node-id="YCdFMwG7DIzUbMqbsjBkAs"><strong data-page-node-id="5q181CMdMHCHifiEIwam8H">187</strong>转发</span>
+            </div>
+            <div class="weibo-gallery" data-page-node-id="xsS9FIizfCnHl6sTElamHm">
+              <div class="weibo-shot single" data-page-node-id="kOeLuaP2r2apmQID3ch8vs"><img src="life-assets/weibo-renamed/weibo-02-first-viral.png" alt="第一次破万" data-page-node-id="QB1cswMqAxn9AtgA6et6wb" /></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 系列图方向 (表情包已移至其后) -->
+        <div class="milestone" data-page-node-id="xPcpSH1cfEmRxvS8GdbVnF">
+          <div class="milestone-card" data-page-node-id="iIH4TM6UfkqEAaSwAz60Y4">
+            <span class="milestone-date" data-page-node-id="FXtHeXYcjCG28KE69VMhr1">2020.06–08 · 找到可持续方向</span>
+            <h3 data-page-node-id="35XdxlBg7N6qFWYpNQwaPP">系列图：持续输出的内容主线</h3>
+            <p data-page-node-id="1LU5rZa9NuxiedVardIyEC">从单条爆款转向主题化、系列化运营，考古系、居家系、特种兵系、羽毛系、撸猫系……通过固定栏目培养粉丝追更习惯。</p>
+            <div class="metrics" data-page-node-id="CUzbbpqj2pw78ghjSMRbmk">
+              <span class="metric" data-page-node-id="SCNNMncfqwhvyNYE1dLXh2"><strong data-page-node-id="10S6eWzXfEHWYKZUkPm7XV">17期+</strong>系列更新</span>
+              <span class="metric" data-page-node-id="mcVQSUTBK1F1AzQYITvUti"><strong data-page-node-id="FW8XB1XS9Mg3rgW32Mt6Xr">多期</strong>4万+阅读</span>
+              <span class="metric" data-page-node-id="u5tgKDCtDCEM2Mu6qTv1Ql"><strong data-page-node-id="oOQJ8Bv5dIidhSHp7uXzy4">主题化</strong>内容矩阵</span>
+            </div>
+            <div class="weibo-gallery" data-page-node-id="KDOSoarLP8bDWhWJ2ubBsu">
+              <div class="weibo-shot" data-page-node-id="PjJbKexopRbIH6lNcVfRMe"><img src="life-assets/weibo-renamed/weibo-06-series-1.png" alt="系列图 1" data-page-node-id="9JGRgW7JnRoIHJZkVSFzcr" /></div>
+              <div class="weibo-shot" data-page-node-id="htTGaCE7BqtwtB0FaJB0gJ"><img src="life-assets/weibo-renamed/weibo-07-series-2.png" alt="系列图 2" data-page-node-id="eZ4osCcy3dv2B9IgWveglW" /></div>
+              <div class="weibo-shot" data-page-node-id="jsITUnuCFHqKHLtTyVm5bh"><img src="life-assets/weibo-renamed/weibo-08-series-3.png" alt="系列图 3" data-page-node-id="jaWSOFsx26Rs0EchVmh9Ce" /></div>
+              <div class="weibo-shot" data-page-node-id="SyEBhA9ETL39Gc5rPH0vM6"><img src="life-assets/weibo-renamed/weibo-09-series-4.png" alt="系列图 4" data-page-node-id="7rk93hdGpRnbA8xx4Xtk5k" /></div>
+              <div class="weibo-shot" data-page-node-id="2NiE1QfqKUC2B5KhcMUkyZ"><img src="life-assets/weibo-renamed/weibo-10-series-5.png" alt="系列图 5" data-page-node-id="egknBOeZ27ALoLVPzuA54V" /></div>
+              <div class="weibo-shot" data-page-node-id="Toa8Va8rsM8ZDBgs5ueLKW"><img src="life-assets/weibo-renamed/weibo-11-series-6.png" alt="系列图 6" data-page-node-id="wQoS7XXJKcu0Vp7bR1RUvG" /></div>
+              <div class="weibo-shot" data-page-node-id="fCYLHbVWpeqYAb8lSZaGh9"><img src="life-assets/weibo-renamed/weibo-12-series-7.png" alt="系列图 7" data-page-node-id="AkoHtyKCte73vxmDziDTQn" /></div>
+            </div>
+            <div class="scroll-hint" data-page-node-id="aFGN3mx4w5hLO40oh51g7l">左右滑动查看 7 期系列图</div>
+          </div>
+        </div>
+
+        <!-- 表情包系列 (已移至系列图之后) -->
+        <div class="milestone" data-page-node-id="Ui4f3APGVDQodV2jHAM5oU">
+          <div class="milestone-card" data-page-node-id="hmax2saACzvddHqJNwYPys">
+            <span class="milestone-date" data-page-node-id="FhQSxDeYM74Ip5l2Zbb3FV">2020.07 · 从搬运到自主创作</span>
+            <h3 data-page-node-id="H8LDei13WGiaKutUlidBHR">表情包系列：把"搬运"变成"原创"</h3>
+            <p data-page-node-id="k3kqjWJtyqEcnWdDWHv3gX">不再只做海外搬运，开始自制表情包、二创图文，用更轻量、更接地气的方式和粉丝互动，逐步建立个人创作标签。</p>
+            <div class="metrics" data-page-node-id="fnKEYdrmNV5CcFvhPjJps8">
+              <span class="metric" data-page-node-id="0crvDNOSAb2HEPH8Qffg0E"><strong data-page-node-id="8aZkaOzUEyhcA3a1zSjGaH">1.9万–4.3万</strong>阅读</span>
+              <span class="metric" data-page-node-id="wdcDfNF4KisKnONA1FvXTt"><strong data-page-node-id="eun43By8vV9gBI6lRFJI8c">20–42</strong>评论</span>
+              <span class="metric" data-page-node-id="cAatfvDj5Rr2lIU2wSXV0b"><strong data-page-node-id="XgOT53xYVudYAI5gD72ks8">84–228</strong>点赞</span>
+            </div>
+            <div class="weibo-gallery" data-page-node-id="GHJcKvO01aAeI2JvXWxU1G">
+              <div class="weibo-shot" data-page-node-id="67G27XnQsFziRWlaeOpGfG"><img src="life-assets/weibo-renamed/weibo-03-meme-1.png" alt="表情包 1" data-page-node-id="gmK4ioJmfCpBKiWmOF6gAq" /></div>
+              <div class="weibo-shot" data-page-node-id="YrVapsOEGm9H2U14VPYKL5"><img src="life-assets/weibo-renamed/weibo-04-meme-2.png" alt="表情包 2" data-page-node-id="fZqdwBdC7ELHn5slPNwlD2" /></div>
+              <div class="weibo-shot" data-page-node-id="LJRIybF7Rscc2H2BrpKs2B"><img src="life-assets/weibo-renamed/weibo-05-meme-3.png" alt="表情包 3" data-page-node-id="6S7TcvD0SVEy4cIdu8kJsD" /></div>
+            </div>
+            <div class="scroll-hint" data-page-node-id="9EO0knXHO1i5BF9uytv37B">左右滑动查看表情包系列</div>
+          </div>
+        </div>
+
+        <!-- 互动板块 -->
+        <div class="milestone" data-page-node-id="m21oVoFmcie8vuqOWjJz86">
+          <div class="milestone-card" data-page-node-id="ow5mXzTLYEBaodbFdhY3AY">
+            <span class="milestone-date" data-page-node-id="5Byz4QUr8tFEGzbHDSnANB">2020.08.17 · 迈出舒适圈</span>
+            <h3 data-page-node-id="tcryADUezB3yf2HUhCs2YX">第一次突破创新：增设互动板块</h3>
+            <p data-page-node-id="fTza3QWdJHkaPn7fAubMDD">不满足于单向输出，开始做"系列图投票统计"等互动玩法，让粉丝参与选题，提高社群活跃度与粘性。</p>
+            <div class="metrics" data-page-node-id="qfHNjLkhFUtPDRo7Vz4kZd">
+              <span class="metric" data-page-node-id="t1vrNqJmcpnWSuOUikFpGL"><strong data-page-node-id="5xn6CCK613qusKsWaIJT73">9</strong>评论</span>
+              <span class="metric" data-page-node-id="j8KGdPePQF5eO8AZRaefFu"><strong data-page-node-id="neP6HZI0YWl6iyY6EhHuTc">80</strong>点赞</span>
+              <span class="metric" data-page-node-id="9bh5B9x9hGcsHczq0NYg19"><strong data-page-node-id="RPXoG7w5Eu63Ak0DJfpaSS">互动投票</strong>粉丝共创</span>
+            </div>
+            <div class="weibo-gallery" data-page-node-id="2meBBxSwlaKtqF2wtj11KB">
+              <div class="weibo-shot single" data-page-node-id="31eMafyhXz08dq0ZC2BGP5"><img src="life-assets/weibo-renamed/weibo-14-interaction.png" alt="互动板块" data-page-node-id="vxlrIFKOZ9hp8nW9d3AC5M" /></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 粉丝榜第一 -->
+        <div class="milestone" data-page-node-id="oQ7vSKpEVYdyI7ilHQOiMo">
+          <div class="milestone-card" data-page-node-id="VGfOjPLcAcaI4X3asDlQdI">
+            <span class="milestone-date" data-page-node-id="ROAwAyhiKWcubEa6hQ3AYc">2020.07.11 · 高光时刻</span>
+            <h3 data-page-node-id="VXMGcDjsYSalNQx2kaPI3l">粉丝榜第一</h3>
+            <p data-page-node-id="t8HMooOdjaaj0fG0vDqHMi">连续 4 周上榜，并在某一周期登顶粉丝榜第一。从 0 经验小白到头部大粉，验证了自己的内容敏感度和执行力。</p>
+            <div class="metrics" data-page-node-id="wVzGJEilbiqal7jLcl6rlU">
+              <span class="metric" data-page-node-id="At4btl71eA4FzUzjyK4KJe"><strong data-page-node-id="EUkdxoKt4YLkGJeGZaSQ97">连续4周</strong>上榜</span>
+              <span class="metric" data-page-node-id="gY6QYRgxcY7nQrHlB0PFse"><strong data-page-node-id="LTP8clCwrlSOJGzHWSjHF1">粉丝榜</strong>No.1</span>
+              <span class="metric" data-page-node-id="Rzhna3G0jj3JH02kQnXsN1"><strong data-page-node-id="Gd9UZvtthZWA1hfWmy7I0Z">4.1万</strong>阅读</span>
+            </div>
+            <div class="weibo-gallery" data-page-node-id="Q8SvPeSGq7Z5jEIOdIHY6P">
+              <div class="weibo-shot single" data-page-node-id="6LDR4hGyuZ99P3HEdf6WXq"><img src="life-assets/weibo-renamed/weibo-15-fan-rank.png" alt="粉丝榜第一" data-page-node-id="plJ5J7Z2JfoZe7MCX6kwvt" /></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 选秀结束后 -->
+        <div class="milestone" data-page-node-id="B7ChzoSXaFZi8udTuRvUmC">
+          <div class="milestone-card" data-page-node-id="UBefz9PiAVNHgXEdMSaPA5">
+            <span class="milestone-date" data-page-node-id="BFGfXL6TYY7lj2xScQcaN3">2020.08 · 持续输出</span>
+            <h3 data-page-node-id="9xrCme1oQSKDF07fbbCrQf">选秀结束后：持续剪辑与活动宣传</h3>
+            <p data-page-node-id="wOUm2Cvs3zy6hlsNzWMkJl">节目收官后没有停更，反而围绕舞台表演、综艺片段做二次剪辑与活动宣传，让账号热度持续延续。</p>
+            <div class="metrics" data-page-node-id="9odBbX81SiWKzogsgxOTRP">
+              <span class="metric" data-page-node-id="bvLptcRwv102AhXrGOZgJQ"><strong data-page-node-id="bP6ubcQ3MoBmq7CVcKeYqs">35.3万</strong>阅读</span>
+              <span class="metric" data-page-node-id="gWfm28P2D4ECkoBZE2DJud"><strong data-page-node-id="wsTvJaIPPOISJNGYbkwJEF">148</strong>评论</span>
+              <span class="metric" data-page-node-id="Cohd3UmPGczHIzer2XEywJ"><strong data-page-node-id="gf0R0y0GWSw0GjpJvjoVsv">1,248</strong>点赞</span>
+              <span class="metric" data-page-node-id="TDP93A9gY2DmLhrNOSb0uj"><strong data-page-node-id="k2IaLWoNOwL2LaUQG8Xq67">10.9万</strong>阅读（另一篇）</span>
+            </div>
+            <div class="weibo-gallery" data-page-node-id="HhNDmdxtj6nG7f53e3ptYb">
+              <div class="weibo-shot" data-page-node-id="gZHl5L5dRBCuwHLqEwSElZ"><img src="life-assets/weibo-renamed/weibo-16-after-show-1.png" alt="选秀后 1" data-page-node-id="SHtQO2r0VtwPPobHpt6ELh" /></div>
+              <div class="weibo-shot" data-page-node-id="EGl1pPVomKKgqiOu6U7jFk"><img src="life-assets/weibo-renamed/weibo-17-after-show-2.png" alt="选秀后 2" data-page-node-id="QDGQDQgVdDGMCyYQgb8GIA" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data results -->
+    <section class="container section" data-page-node-id="HwV5WQ5Mryvosd4fjkvlCB">
+      <div class="eyebrow" data-page-node-id="Zu8Kd8nYC6FLAI7hSJBckC">RESULTS / 数据结果</div>
+      <h2 style="font-size: 24px;" data-page-node-id="QWiEheaDb8RGBsFitXr6Vv">成绩单：一次完整的内容运营闭环</h2>
+      <p class="sub" data-page-node-id="yJtVGUb8YqQVCH7IuWo49i">从选题、生产、互动到数据复盘，短短数月跑通了自媒体账号的完整链路。</p>
+      <div class="data-grid" data-page-node-id="YFj4eTDgUPf0TBOHHSgJFk">
+        <div class="data-card" data-page-node-id="g8A9G6K9P6IV38BubVqyY7">
+          <img src="life-assets/weibo-renamed/data-02-profile.png" alt="账号总览" data-page-node-id="yCcRDT3TDsaiix7w1ZQCOV" />
+        </div>
+        <div class="data-card" data-page-node-id="yRjWp1kByr036Bfx3iAZ46">
+          <img src="life-assets/weibo-renamed/data-03-core-metrics.png" alt="核心数据" data-page-node-id="pJd4xkXAjUAawMxI4z3HjQ" />
+        </div>
+        <div class="data-card" data-page-node-id="SgDS6gX95IpOC5W70Ts2k3">
+          <img src="life-assets/weibo-renamed/data-04-persona.png" alt="读者画像" data-page-node-id="sEwt0I0jnYqEW0L4NRslY8" />
+        </div>
+        <div class="data-card" data-page-node-id="TeAprw1ZQcIhTnijZ4hUOv">
+          <img src="life-assets/weibo-renamed/data-05-region.png" alt="地区分布" data-page-node-id="jNt1QwDvzrbigCB7haEDyr" />
+        </div>
+        <div class="data-card" data-page-node-id="VjuXhyEfYfULLvnSlBnvW7">
+          <img src="life-assets/weibo-renamed/data-06-interests.png" alt="兴趣分布" data-page-node-id="pzu6LMeSQ50h22FO96d1o9" />
+        </div>
+        <div class="data-card wide" data-page-node-id="MokGFlqeRYcsDrd178VZYY">
+          <img src="life-assets/weibo-renamed/data-01-top-videos.jpg" alt="热门视频数据" data-page-node-id="COnC5OWSVE1w2seFj572n5" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-page-node-id="J7EPZpopkKn0X4gRrbWSLr">
+    <div class="container" data-page-node-id="WOKnO4ntA9smAkJgrZDOPd">
+      © 2026 个人求职网站 · 感谢访问，期待与你相遇 ✦
+    </div>
+  </footer>
+</body>
+</html>
