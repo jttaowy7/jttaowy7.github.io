@@ -404,6 +404,108 @@ html[lang="en"] .en { display: inline; }
 .footer-copy { color: var(--ink-faint); font-size: 13.5px; }
 
 /* =============================================================
+   交互增强 (Micro-interactions)
+   — 角色动态感（漂浮 / 打招呼 / 鼠标跟随）· 气泡悬浮 · 按压反馈 · 点击涟漪
+   说明：纯 CSS + main.js，无需改结构即可生效；要调强度改下面的数值即可。
+   ============================================================= */
+
+/* 角色呼吸式漂浮（默认一直轻轻浮动） */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-14px) rotate(-1.2deg); }
+}
+.hero-photo {
+  animation: floatY 4.5s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+.about-portrait img { animation: floatY 5s ease-in-out infinite; transform-origin: bottom center; }
+
+/* 鼠标跟随倾斜容器（由 main.js 注入 --rx / --ry） */
+.hero-photo-tilt {
+  position: relative; z-index: 2;
+  transform: perspective(900px) rotateY(var(--ry, 0deg)) rotateX(var(--rx, 0deg));
+  transition: transform .25s ease-out;
+  transform-style: preserve-3d;
+}
+
+/* 打招呼气泡：鼠标移入人像区时角色挥手 + 气泡弹出 */
+.hero-portrait .greeting-bubble {
+  position: absolute; z-index: 6; top: 72px; right: 4px;
+  background: #fff; color: var(--ink); font-weight: 700; font-size: 15px;
+  padding: 10px 16px; border-radius: 18px; border: 2px solid var(--coral-light);
+  box-shadow: var(--sh-soft); pointer-events: none;
+  opacity: 0; transform: scale(.5) translateY(10px); transform-origin: bottom left;
+  transition: opacity .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1);
+}
+.hero-portrait .greeting-bubble::after {
+  content: ""; position: absolute; left: 22px; bottom: -9px;
+  border: 9px solid transparent; border-top-color: #fff; border-bottom: 0;
+}
+.hero-portrait:hover .greeting-bubble { opacity: 1; transform: scale(1) translateY(0); }
+.hero-portrait:hover .hero-photo { animation: wave .8s ease-in-out infinite; }
+@keyframes wave {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  25%      { transform: translateY(-9px) rotate(7deg); }
+  50%      { transform: translateY(0) rotate(-4deg); }
+  75%      { transform: translateY(-7px) rotate(6deg); }
+}
+
+/* 导航链接：气泡悬浮 + 按压 */
+.nav-link {
+  transition: transform .16s ease, color .2s, background .2s, box-shadow .2s;
+}
+.nav-link:hover {
+  transform: translateY(-2px) scale(1.06);
+  background: rgba(238,130,102,0.12);
+  box-shadow: 0 8px 18px rgba(238,130,102,0.28);
+  color: var(--ink);
+}
+.nav-link:active { transform: translateY(0) scale(0.95); }
+
+/* 按钮 / 语言切换：气泡感 + 按压 */
+.btn, .lang-toggle { transition: transform .16s ease, box-shadow .2s, background .2s, color .2s; }
+.btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 14px 30px rgba(92,58,46,0.32); }
+.btn-coral:hover { box-shadow: 0 16px 34px rgba(238,130,102,0.46); }
+.btn:active { transform: translateY(0) scale(0.95); }
+.lang-toggle:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 8px 18px rgba(238,130,102,0.25); }
+.lang-toggle:active { transform: translateY(0) scale(0.95); }
+
+/* 卡片悬停：珊瑚微光（比默认更明显一点） */
+.card:hover, .pillar-card:hover, .project-card:hover,
+.honor-card:hover, .contact-card:hover, .skill-card:hover {
+  box-shadow: 0 16px 38px rgba(238,130,102,0.20), var(--sh-card);
+}
+
+/* 点击涟漪 */
+.ripple-host { position: relative; overflow: hidden; }
+.ripple {
+  position: absolute; border-radius: 50%;
+  transform: scale(0); animation: rippleAnim .6s ease-out forwards;
+  pointer-events: none; z-index: 1;
+}
+@keyframes rippleAnim { to { transform: scale(2.6); opacity: 0; } }
+
+/* 兴趣卡：漂浮 + 悬停摆动 + 打招呼气泡（气泡由 main.js 注入） */
+.hobby-card { position: relative; transition: transform .25s ease, box-shadow .25s ease; }
+.hobby-card img { animation: floatY 3.8s ease-in-out infinite; }
+.hobby-card:hover { transform: translateY(-8px) scale(1.04); box-shadow: var(--sh-soft); }
+.hobby-card:hover img { animation: wiggle .6s ease-in-out; }
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25%      { transform: rotate(-8deg); }
+  75%      { transform: rotate(8deg); }
+}
+.hobby-card .hobby-bubble {
+  position: absolute; top: 12px; right: 14px; z-index: 3;
+  background: #fff; color: var(--coral); font-weight: 700; font-size: 13px;
+  padding: 6px 12px; border-radius: 14px; border: 2px solid var(--coral-light);
+  box-shadow: var(--sh-card); opacity: 0; transform: scale(.5);
+  transition: opacity .25s, transform .25s cubic-bezier(.34,1.56,.64,1); pointer-events: none;
+}
+.hobby-card:hover .hobby-bubble { opacity: 1; transform: scale(1); }
+
+/* =============================================================
    响应式 (Responsive)
    ============================================================= */
 @media (max-width: 920px) {
