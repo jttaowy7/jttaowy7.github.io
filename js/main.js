@@ -103,6 +103,37 @@
   });
 })();
 
+/* ---------- ⑤-b 首页人物：鼠标经过时互动台词多样轮换（带表情） ---------- */
+(function () {
+  var portrait = document.getElementById('heroPortrait');
+  var bubble = document.getElementById('greetingBubble');
+  if (!portrait || !bubble) return;
+  // 互动台词库：随鼠标经过人物，轮换打招呼/介绍语（多样化 + 表情）
+  var words = [
+    '你好，我是陶文洋 👋',
+    'Hi，I am Wenyang 👋',
+    '一起聊聊机会吧 ✨👋',
+    '欢迎来到我的网站 ✨',
+    '很高兴认识你 🤝'
+  ];
+  var idx = 0, timer = null;
+  function showNext() {
+    bubble.textContent = words[idx % words.length];
+    bubble.classList.add('show');
+    idx++;
+  }
+  portrait.addEventListener('mouseenter', function () {
+    showNext();
+    clearInterval(timer);
+    timer = setInterval(showNext, 1800);
+  });
+  portrait.addEventListener('mouseleave', function () {
+    clearInterval(timer);
+    timer = null;
+    if (bubble) bubble.classList.remove('show');
+  });
+})();
+
 /* ---------- ⑥ 生活页兴趣卡：悬停打招呼气泡 ---------- */
 (function () {
   var cards = document.querySelectorAll('.hobby-card');
