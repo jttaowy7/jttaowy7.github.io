@@ -49,27 +49,22 @@
           <p class="hero-sub" data-page-node-id="WHyxgEuM7bh4q5C0L9F9uC">金融工程 · 硕士 Candidate｜CityU Hong Kong</p>
           <p class="hero-intro" data-page-node-id="OhuVehTMVu5YUVWGEdFTis">博观而约取，厚积而薄发。<br  data-page-node-id="FqtRRG7Rx0WvNEyyIHaEj8"/>把金融模型、数据科学与产品运营，变成可落地的价值。</p>
           <div class="hero-cta" data-page-node-id="r0gTTeQOYsEyCqKIEsUNd6">
-            <a class="btn btn-coral" href="projects.html" data-page-node-id="Lw497bhqlxhDjCFfDTwWVY">查看项目经历<span class="en" data-page-node-id="n76OEnfqSioXlixY888YFQ">View Projects</span></a>
+            <a class="btn btn-coral" href="about.html" data-page-node-id="Lw497bhqlxhDjCFfDTwWVY">了解我的更多 <span class="spark">✨</span><span class="en" data-page-node-id="n76OEnfqSioXlixY888YFQ">About Me</span></a>
             <a class="btn btn-ghost" href="contact.html" data-page-node-id="DGUVJnBN4ibbMHxDrhPh5x">联系我<span class="en" data-page-node-id="ACJFyJ1iKCLeYYRXU5O2TS">Contact</span></a>
-          </div>
-          <div class="trust" data-page-node-id="YVHhR92HFBDaFelAOmZoeC">
-            <span class="trust-chip" data-page-node-id="0ESbCfH5ufNpXWIblBEHDq"><span class="dot" data-page-node-id="ym3hHJZE03CwvTI8TDG71L"></span>香港城市大学 · 硕士在读</span>
-            <span class="trust-chip" data-page-node-id="MGE9T8GaBUu2L7jG1BB8wV"><span class="dot" data-page-node-id="D22ixZ1GFZAxlumRiEmcr4"></span>浙江财经大学 · 本科</span>
-            <span class="trust-chip" data-page-node-id="lW4qqjDWyPCUV8InPqcEru"><span class="dot" data-page-node-id="IdmvotSUMJ94KpD54wsRAb"></span>Python · 机器学习</span>
-            <span class="trust-chip" data-page-node-id="otDS4l9G0JikWYbIHmNngi"><span class="dot" data-page-node-id="ghso9BrgWDfsvnKH8UHxIH"></span>量化策略 · 多因子</span>
-            <span class="trust-chip" data-page-node-id="yU77paHA8JD7Erxk3jyKFZ"><span class="dot" data-page-node-id="NeFx4JdPAOoesEqYIiOMJ6"></span>自媒体创作实践</span>
           </div>
         </div>
 
-        <div class="hero-portrait" data-page-node-id="HGV7Dt9VeCLxuc0ugU2LBy">
+        <div class="hero-portrait" data-page-node-id="HGV7Dt9VeCLxuc0ugU2LBy" id="heroPortrait">
           <div class="hero-blob" data-page-node-id="KX4weX3c8CYZCCLlb5JCHd"></div>
-          <div class="hero-photo-tilt">
-            <img class="hero-photo" src="assets/avatar/avatar.png" alt="陶文洋形象照" data-page-node-id="n1ypHEOOnbJhDdtjPtlYXQ" />
+          <div class="hero-photo-tilt" id="heroPhotoTilt">
+            <img class="hero-photo" id="heroPhoto" src="assets/avatar/avatar.png" alt="陶文洋形象照" data-page-node-id="n1ypHEOOnbJhDdtjPtlYXQ" />
           </div>
-          <span class="greeting-bubble">👋 你好呀！</span>
-          <span class="open-sticker" data-page-node-id="cg4m66Ra93QukkjnvC3R5l">OPEN TO WORK</span>
-          <span class="hero-bubble b1" data-page-node-id="udQBppInl4jX3PWd0UbpXZ">📊 量化研究</span>
-          <span class="hero-bubble b2" data-page-node-id="B6LHmWM5aWfhj5dv4ORext">🚀 数据驱动</span>
+          <!-- 互动台词：鼠标经过时多样轮换（带表情） -->
+          <span class="greeting-bubble" id="greetingBubble">你好，我是陶文洋 👋</span>
+          <!-- 常驻浮块：长期显示在人物周边，带浮动特效 -->
+          <span class="open-sticker float-chip f3" data-page-node-id="cg4m66Ra93QukkjnvC3R5l">OPEN TO WORK</span>
+          <span class="hero-bubble b1 float-chip f1" data-page-node-id="udQBppInl4jX3PWd0UbpXZ">📊 量化研究</span>
+          <span class="hero-bubble b2 float-chip f2" data-page-node-id="B6LHmWM5aWfhj5dv4ORext">🚀 数据驱动</span>
         </div>
       </div>
     </section>
@@ -83,14 +78,32 @@
       </div>
       <div class="pillars" data-page-node-id="awJnLFqe12il48XCGyDDYX">
         <div class="pillar-card blue" data-page-node-id="lalY9soUdKyuTJtl66RWWY">
-          <span class="pillar-tag" data-page-node-id="8p9xKWOMEZWUeUafOUenO2">金融量化能力</span>
-          <h3 data-page-node-id="6EcgmgLk8hf1nkekhWBs5H">金融量化能力</h3>
-          <p data-page-node-id="9guZuypusHFeiWAY4nPVQl">多因子模型、HMM 择时、Fama-French 五因子，能把市场数据转化为可回测、可解释的投资策略；熟悉 JoinQuant 回测与风险归因。</p>
+          <div class="pillar-head">
+            <span class="pillar-ico">📊</span>
+            <h3 class="pillar-title">金融量化能力</h3>
+            <span class="pillar-corner">金融 · 量化</span>
+          </div>
+          <p class="pillar-sub">行业研究 · 风控审计 · 量化策略 · 金融建模</p>
+          <ul class="pillar-list">
+            <li>东方证券 · 行业研究</li>
+            <li>BDO 立信 · 风控审计</li>
+            <li>浙江省证券投资大赛 量化组 校一等奖（随机森林-LightGBM）</li>
+            <li>毕业论文 · Fama-French五因子模型</li>
+          </ul>
         </div>
         <div class="pillar-card peach" data-page-node-id="w9BWcxhA1by2PS6oqBiBiJ">
-          <span class="pillar-tag" data-page-node-id="Gu7H2u9fmV84HVXJhog8kA">互联网 · AI 能力</span>
-          <h3 data-page-node-id="JMLzoftyLbI3jJsiy5UUUu">互联网 · AI 能力</h3>
-          <p data-page-node-id="WXGXzPVGOGbjG3HyGkrHez">策略运营、用户增长与机器学习建模，熟悉从数据清洗、特征工程到模型上线与效果复盘的产品化闭环。</p>
+          <div class="pillar-head">
+            <span class="pillar-ico">🚀</span>
+            <h3 class="pillar-title">互联网 · AI 能力</h3>
+            <span class="pillar-corner">运营 · AI/ML</span>
+          </div>
+          <p class="pillar-sub">策略运营 · 机器学习 · 数据分析</p>
+          <ul class="pillar-list">
+            <li>得物 Dewu · 策略运营</li>
+            <li>NTU · 垃圾邮件检测（RF 95.6%）</li>
+            <li>阿里云 AI Bootcamp · 优秀</li>
+            <li>Python / SQL 数据处理</li>
+          </ul>
         </div>
       </div>
 
@@ -103,12 +116,12 @@
         <span class="chip" data-page-node-id="bnt8k8asngT45tgMhxornY">Python 编程</span>
         <span class="chip" data-page-node-id="cTaPnIryZnJPgxLD8DGHPj">SQL</span>
         <span class="chip" data-page-node-id="8IOXlj5rSFY73ihZZnnB1w">Stata</span>
+        <span class="chip" data-page-node-id="p7X8eSK06aKg7c96JufEyX">JoinQuant API</span>
         <span class="chip" data-page-node-id="WYV7sY7AXcAyCHHDmERw6e">数据分析</span>
         <span class="chip" data-page-node-id="GMKAK7QevX6a7YYOODFr29">机器学习</span>
         <span class="chip" data-page-node-id="BN6aUrd01XHdaIZ9aWIzDc">量化研究</span>
         <span class="chip" data-page-node-id="fXWxZuqDkVKlDl2sd1LhzJ">中英双语</span>
         <span class="chip" data-page-node-id="9RhUkP2di4yifQVsB4pvfR">粤语（入门）</span>
-        <span class="chip" data-page-node-id="p7X8eSK06aKg7c96JufEyX">JoinQuant API</span>
       </div>
     </section>
   </main>
@@ -117,14 +130,13 @@
   <footer class="footer" data-page-node-id="If5BLTi0AkA21oQnDkbyLo">
     <div class="footer-inner" data-page-node-id="qrSNuOX9yaHE77ggRrOZtF">
       <div class="footer-contact" data-page-node-id="24LrbbiNY7FusYqMOA5mFr">
-        <a href="mailto:tctwyoiz3456789@outlook.com" data-page-node-id="e9vYpSnWDSXZbjJUGneBIW">tctwyoiz3456789@outlook.com</a>
-        <a href="tel:+8617721198351" data-page-node-id="Gx67Iby0rZ4EI8cJgrvdKw">+86 177 2119 8351</a>
-        <a href="tel:+85255775372" data-page-node-id="p8C7RdXkdpTzZweRn0bALK">+852 5577 5372</a>
-        <span data-page-node-id="aQqH3SNRKsyUoGHsLzRa7J">WeChat: tctwyoiz34</span>
-        <a href="https://www.linkedin.com/in/wenyang-tao-t55775372" target="_blank" rel="noopener" data-page-node-id="RBtqF8cVFiSPauZwQnNECX">LinkedIn</a>
+        <span>Email: <a href="mailto:tctwyoiz3456789@outlook.com">tctwyoiz3456789@outlook.com</a></span>
+        <span>Tel: +86 177 2119 8351 / +852 5577 5372</span>
+        <span>WeChat: tctwyoiz34</span>
+        <span>LinkedIn: <a href="https://www.linkedin.com/in/wenyang-tao-t55775372" target="_blank" rel="noopener">wenyang-tao-t55775372</a></span>
       </div>
       <p class="footer-sign" data-page-node-id="yd0NRMvc19B8yGkn4LhNgR">感谢访问，期待与你相遇 ✦</p>
-      <p class="footer-copy" data-page-node-id="KS7kyJKObi59AbEGEGCTAp">© 2026 个人求职网站</p>
+      <p class="footer-copy" data-page-node-id="KS7kyJKObi59AbEGEGCTAp">© 2026 Jason TAO's Personal Website</p>
     </div>
   </footer>
 

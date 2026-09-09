@@ -41,64 +41,56 @@
 
   <main class="container section">
     <div class="section-head">
-      <span class="eyebrow">Education · 教育背景</span>
+      <span class="eyebrow">EDUCATION · 教育背景</span>
       <h2 class="section-title">我的求学之路</h2>
-      <p class="section-desc">扎实的金融 × 数理 × 编程训练，从本科到硕士逐步把理论转译为可验证的模型与策略。</p>
+      <p class="section-desc">扎实的金融 × 数理 × 编程训练，是复合能力的根基。</p>
     </div>
 
-    <div style="display:flex;flex-direction:column;gap:24px;">
-      <!-- CityU -->
-      <div class="timeline-card">
-        <div class="rail"><span class="dot"></span><span class="line"></span></div>
-        <div class="tc-body">
-          <div class="tc-meta">
-            <h3>香港城市大学 CityU</h3>
-            <span class="tc-date">2026.08 – 至今</span>
-          </div>
-          <p class="tc-org">金融工程 · 理学硕士（Master of Science in Financial Engineering）</p>
-          <p class="tc-role">硕士在读 ｜ 香港</p>
-          <ul class="tc-list">
-            <li>核心课程：金融衍生品、量化投资、机器学习在金融中的应用、风险管理。</li>
-            <li>研究方向聚焦多因子选股与风险因子建模，注重策略的可回测与可解释性。</li>
+    <div class="edu-list">
+      <!-- ① CityU 硕士 -->
+      <div class="edu-row">
+        <div class="col-main">
+          <h3>香港城市大学 CityU HK</h3>
+          <div class="date">2026.08 – 至今</div>
+          <div class="org">金融工程 · 理学硕士（MSc Financial Engineering）</div>
+          <ul>
+            <li>核心课程：衍生品与风险管理、金融随机微积分、固定收益证券。</li>
+            <li>方向：量化金融 / 风险管理 / 资产定价。</li>
           </ul>
-          <div class="stack"><span>金融工程</span><span>量化投资</span><span>机器学习</span><span>风险管理</span></div>
+        </div>
+        <div class="col-meta"><span class="pill">硕士在读</span></div>
+      </div>
+
+      <!-- ② ZUFE 本科 -->
+      <div class="edu-row" style="margin-top:24px;">
+        <div class="col-main">
+          <h3>浙江财经大学 ZUFE</h3>
+          <div class="date">2022.09 – 2026.06</div>
+          <div class="org">金融工程 · 学士（BSc Financial Engineering）</div>
+          <ul>
+            <li>GPA 4.03 / 5.0（专业前 20%）。</li>
+            <li>核心课程：随机过程、金融工程、投资学、计量经济学、Python 程序设计。</li>
+            <li>荣誉：优秀学生三等奖学金（2024、2025）、道德素养单项奖学金（2023）、金融之星（团体，2024）。</li>
+          </ul>
+        </div>
+        <div class="col-meta">
+          <span class="pill">GPA 4.03</span>
+          <span class="pill peach">专业 Top 20%</span>
         </div>
       </div>
 
-      <!-- ZUFE -->
-      <div class="timeline-card">
-        <div class="rail"><span class="dot"></span><span class="line"></span></div>
-        <div class="tc-body">
-          <div class="tc-meta">
-            <h3>浙江财经大学 ZUFE</h3>
-            <span class="tc-date">2022.09 – 2026.06</span>
-          </div>
-          <p class="tc-org">金融工程 · 学士</p>
-          <p class="tc-role">GPA 4.03 / 5.0 ｜ 专业排名 Top 20%</p>
-          <ul class="tc-list">
-            <li>系统学习金融、统计与编程，多次获得学业奖学金与德育类奖项。</li>
-            <li>参与证券投资竞赛与量化研究项目，奠定因子研究与数据建模基础。</li>
+      <!-- ③ NTU 暑校 -->
+      <div class="edu-row" style="margin-top:24px;">
+        <div class="col-main">
+          <h3>南洋理工大学 NTU</h3>
+          <div class="date">2025.06 – 2025.07</div>
+          <div class="org">暑期学校（Summer School）</div>
+          <ul>
+            <li>专题：数据科学与人工智能导论。</li>
+            <li>结业成绩 A+，获优秀项目展示。</li>
           </ul>
-          <div class="stack"><span>金融工程</span><span>统计学</span><span>Python</span><span>数据分析</span></div>
         </div>
-      </div>
-
-      <!-- NTU -->
-      <div class="timeline-card">
-        <div class="rail"><span class="dot"></span><span class="line"></span></div>
-        <div class="tc-body">
-          <div class="tc-meta">
-            <h3>南洋理工大学 NTU</h3>
-            <span class="tc-date">2025.06 – 2025.07</span>
-          </div>
-          <p class="tc-org">数据科学与人工智能 · 暑期学校（新加坡）</p>
-          <p class="tc-role">综合成绩 A+</p>
-          <ul class="tc-list">
-            <li>完成机器学习与数据科学密集训练，覆盖监督学习、特征工程与模型评估。</li>
-            <li>以真实数据集完成端到端建模项目，强化英文文献阅读与协作能力。</li>
-          </ul>
-          <div class="stack"><span>机器学习</span><span>数据科学</span><span>Python</span></div>
-        </div>
+        <div class="col-meta"><span class="pill mint">成绩 A+</span></div>
       </div>
     </div>
   </main>
@@ -107,14 +99,13 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-contact">
-        <a href="mailto:tctwyoiz3456789@outlook.com">tctwyoiz3456789@outlook.com</a>
-        <a href="tel:+8617721198351">+86 177 2119 8351</a>
-        <a href="tel:+85255775372">+852 5577 5372</a>
+        <span>Email: <a href="mailto:tctwyoiz3456789@outlook.com">tctwyoiz3456789@outlook.com</a></span>
+        <span>Tel: +86 177 2119 8351 / +852 5577 5372</span>
         <span>WeChat: tctwyoiz34</span>
-        <a href="https://www.linkedin.com/in/wenyang-tao-t55775372" target="_blank" rel="noopener">LinkedIn</a>
+        <span>LinkedIn: <a href="https://www.linkedin.com/in/wenyang-tao-t55775372" target="_blank" rel="noopener">wenyang-tao-t55775372</a></span>
       </div>
       <p class="footer-sign">感谢访问，期待与你相遇 ✦</p>
-      <p class="footer-copy">© 2026 个人求职网站</p>
+      <p class="footer-copy">© 2026 Jason TAO's Personal Website</p>
     </div>
   </footer>
 
