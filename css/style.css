@@ -209,6 +209,61 @@ html[lang="en"] .en { display: inline; }
 .hero-intro { margin-top: 18px; font-size: 18px; color: var(--ink-soft); max-width: 520px; }
 .hero-cta { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
 
+/* 首页 Hero — 期望岗位/地点信息块 */
+.hero-expect {
+  margin-top: 28px; padding-left: 16px;
+  border-left: 3px solid var(--coral);
+  display: flex; flex-direction: column; gap: 10px;
+  max-width: 540px;
+}
+.expect-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.expect-label {
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: 1px;
+  color: var(--ink-soft); min-width: 96px; flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.expect-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--coral); flex-shrink: 0;
+  box-shadow: 0 0 0 0 rgba(238,130,102,0.5);
+  animation: dotPulse 1.8s ease-out infinite;
+}
+@keyframes dotPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(238,130,102,0.45); }
+  70%  { box-shadow: 0 0 0 7px rgba(238,130,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(238,130,102,0); }
+}
+.expect-value { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.expect-chip {
+  display: inline-flex; align-items: center;
+  padding: 4px 14px; border-radius: var(--r-pill);
+  font-size: 15px; font-weight: 600; color: var(--ink);
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(238,130,102,0.32);
+  box-shadow: 0 2px 8px rgba(238,130,102,0.10);
+  cursor: default;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+}
+.expect-chip:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: #fff;
+  border-color: var(--coral);
+  box-shadow: 0 10px 20px rgba(238,130,102,0.30);
+}
+.expect-break { display: none; }
+/* 入场：逐行轻缓上浮 */
+@keyframes expectIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-expect .expect-row { opacity: 0; animation: expectIn .6s ease forwards; }
+.hero-expect .expect-row:nth-child(1) { animation-delay: .10s; }
+.hero-expect .expect-row:nth-child(2) { animation-delay: .22s; }
+.hero-expect .expect-row:nth-child(3) { animation-delay: .34s; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-expect .expect-row, .expect-dot { animation: none; opacity: 1; }
+}
+
 /* Hero 右侧人像 */
 .hero-portrait { position: relative; display: grid; place-items: center; min-height: 460px; }
 .hero-blob {
@@ -814,6 +869,7 @@ html[lang="en"] .en { display: inline; }
   .milestone-block.left-image .ms-img { order: 1; }
   .milestone-block.left-image .ms-text { order: 0; }
   .section { padding: 76px 0; }
+  .hero-expect { max-width: 100%; }
 }
 
 /* —— 手机（≤560）：增加水平留白、收紧卡片内边距、防止内容贴边/溢出 —— */
@@ -828,6 +884,10 @@ html[lang="en"] .en { display: inline; }
   .hero-sub { font-size: 18px; }
   .hero-intro { font-size: 16px; }
   .hero-cta { margin-top: 24px; gap: 10px; }
+  .hero-expect { margin-top: 20px; padding-left: 12px; gap: 8px; }
+  .expect-label { min-width: auto; font-size: 12px; }
+  .expect-value { font-size: 14px; gap: 6px; }
+  .expect-chip { font-size: 13px; padding: 3px 12px; }
   .hero-portrait { min-height: 280px; }
   .hero-photo { width: 220px; height: auto; }
   .hero-bubble { padding: 8px 12px; font-size: 12px; }
