@@ -85,11 +85,14 @@
   });
 })();
 
-/* ---------- ⑤ Hero 形象：鼠标跟随倾斜（动态感） ---------- */
+/* ---------- ⑤ Hero 形象：鼠标跟随倾斜（动态感，触控设备禁用避免误触后无法复位） ---------- */
 (function () {
   var portrait = document.querySelector('.hero-portrait');
   var tilt = document.querySelector('.hero-photo-tilt');
   if (!portrait || !tilt) return;
+  // 在触控设备上禁用鼠标跟随倾斜，避免点击/触摸后人像卡住或持续抖动
+  var isTouch = window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
+  if (isTouch) return;
   portrait.addEventListener('mousemove', function (e) {
     var r = portrait.getBoundingClientRect();
     var px = (e.clientX - r.left) / r.width - 0.5;   // -0.5 .. 0.5

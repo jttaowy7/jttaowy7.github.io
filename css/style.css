@@ -770,16 +770,17 @@ html[lang="en"] .en { display: inline; }
 
 /* —— iPad 横屏及更窄（≤1024）：导航折叠为汉堡，避免 9 个链接挤压换行 —— */
 @media (max-width: 1024px) {
-  .nav { position: static; }
+  /* 保持 nav 为层叠上下文，避免 hero 人像/浮块覆盖下拉菜单 */
+  .nav { position: relative; z-index: 100; }
   .nav-inner { position: relative; }
   .nav-links {
     position: absolute; top: 58px; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 4px;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.8);
     border-radius: var(--r); padding: 14px; box-shadow: var(--sh-nav);
-    display: none; z-index: 80;
+    display: none; z-index: 101;
   }
   .nav-links.open { display: flex; }
   .nav-burger { display: inline-block; }
@@ -802,22 +803,81 @@ html[lang="en"] .en { display: inline; }
   .section { padding: 76px 0; }
 }
 
-/* —— 手机（≤560）：进一步收紧间距与字号 —— */
+/* —— 手机（≤560）：增加水平留白、收紧卡片内边距、防止内容贴边/溢出 —— */
 @media (max-width: 560px) {
-  .container { padding: 0 18px; }
-  .nav { padding: 0 14px; }
-  .section { padding: 56px 0; }
-  .section-head { margin-bottom: 32px; }
+  :root { --section-y: 64px; }
+  .container { padding: 0 20px; }
+  .nav { padding: 0 16px; top: 12px; margin-top: 12px; }
+  .nav-inner { padding: 8px 12px 8px 14px; }
+  .nav-links { top: 54px; }
+  .hero { padding: 36px 0 48px; }
   .hero-title { font-size: 32px; }
-  .hero-portrait { min-height: 300px; }
+  .hero-sub { font-size: 18px; }
+  .hero-intro { font-size: 16px; }
+  .hero-cta { margin-top: 24px; gap: 10px; }
+  .hero-portrait { min-height: 280px; }
+  .hero-photo { width: 220px; height: auto; }
+  .hero-bubble { padding: 8px 12px; font-size: 12px; }
+  .hero-bubble.b1 { top: 8px; left: 4px; }
+  .hero-bubble.b2 { bottom: 18px; right: 4px; }
+  .open-sticker { left: 4px; bottom: 14px; font-size: 11px; padding: 7px 12px; }
+  .section { padding: 48px 0; }
+  .section-head { margin-bottom: 28px; }
   .section-title { font-size: 26px; }
-  .pillar-title { font-size: 20px; }
-  .hobby-grid { grid-template-columns: 1fr 1fr; }
-  .data-grid { grid-template-columns: 1fr 1fr; }
+  .section-desc { font-size: 16px; }
+  .eyebrow { font-size: 12px; margin-bottom: 10px; }
+
+  /* 统一收紧卡片内边距，避免文字贴卡片边缘 */
+  .card, .pillar-card, .skill-card, .contact-card, .project-card,
+  .edu-row, .exp-card, .timeline-card, .creation-card, .data-card {
+    padding: 20px;
+  }
+  .honor-card { padding: 16px; }
+  .pillar-ico { width: 38px; height: 38px; font-size: 18px; }
+  .pillar-title { font-size: 19px; }
+  .pillar-sub { font-size: 14px; }
+  .pillar-list li { font-size: 13.5px; }
+  .pillar-corner { font-size: 11px; padding: 3px 10px; }
+
+  .pillars, .grid-2, .grid-3, .skill-grid, .contact-grid,
+  .creation-grid, .hobby-grid, .data-grid {
+    gap: 14px;
+  }
+  .chip-row { gap: 8px; margin-top: 18px; }
+  .chip { padding: 8px 14px; font-size: 13.5px; }
+  .filters { gap: 8px; margin-bottom: 24px; }
+  .filter-tab { padding: 8px 14px; font-size: 14px; }
   .btn { padding: 10px 16px; font-size: 14px; }
   .nav-actions { gap: 6px; }
   .nav-actions .btn-cocoa { padding: 9px 12px; font-size: 13px; }
-  .footer-contact { gap: 8px 16px; font-size: 13px; }
+
+  /* 联系卡改为垂直居中，避免长邮箱撑破卡片 */
+  .contact-card { flex-direction: column; gap: 10px; text-align: center; }
+  .contact-ico { width: 44px; height: 44px; border-radius: 14px; font-size: 18px; }
+  .contact-card a, .contact-card .val { font-size: 16px; }
+
+  /* 页脚 */
+  .footer-inner { padding: 32px 20px 24px; }
+  .footer-sign { font-size: 16px; }
+  .footer-contact { gap: 8px 14px; font-size: 13px; }
+
+  /* 横滚图集缩小，避免贴边/溢出 */
+  .gallery-scroll { gap: 12px; padding: 4px 0 14px; }
+  .gallery-scroll img { width: 280px; height: 200px; }
+  .gallery-scroll.data-gallery img { height: 180px; max-width: 320px; }
+  .tl-card { padding: 18px; }
+  .tl-card .tl-gallery { height: 180px; }
+  .tl-card .tl-title { font-size: 16px; }
+  .tl-card .tl-desc { font-size: 13.5px; }
+  .hobby-card { padding: 16px; }
+  .hobby-card img { height: 120px; }
+  .hobby-title { font-size: 14px; }
+  .hobby-desc { font-size: 12px; }
+
+  /* 生活页里程碑块 */
+  .milestone-block { padding: 20px; gap: 18px; }
+  .ms-metrics { gap: 8px; }
+  .ms-metrics .metric { padding: 6px 10px; font-size: 12px; }
 }
 
 /* =============================================================
