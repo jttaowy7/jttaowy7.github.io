@@ -5,6 +5,11 @@
    改颜色 / 字体 / 圆角 / 阴影，只需动这一处，全站即时生效。
    ============================================================= */
 
+/* 全局盒模型与安全：border-box 让 padding 计入宽度，杜绝 width:100%+padding 撑破容器；
+   html 横向溢出隐藏，避免内部横滚图集把整页撑出横向滚动条（贴边/被裁/时间轴挤没的根因） */
+*, *::before, *::after { box-sizing: border-box; }
+html { overflow-x: hidden; }
+
 :root {
   /* ---------- 配色 (Color) ---------- */
   --peach:        #FFD9C9;   /* 蜜桃 */
@@ -65,6 +70,12 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* 为刘海屏/状态栏留安全距离，并在移动端额外增加水平内边距防止贴边 */
+  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) 0 env(safe-area-inset-left, 0px);
+  overflow-x: hidden;            /* 兜底：任何意外溢出都不引发整页横向滚动 */
+  width: 100%;
+  overflow-wrap: break-word;     /* 英文长词/长链接自动换行，避免撑破卡片 */
+  word-break: break-word;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -84,9 +95,9 @@ html[lang="en"] .en { display: inline; }
    导航 (Navigation) — 毛玻璃胶囊
    ============================================================= */
 .nav {
-  position: sticky; top: 16px; z-index: 100;
+  position: sticky; top: calc(16px + env(safe-area-inset-top, 0px)); z-index: 100;
   margin: 16px auto 0; max-width: var(--maxw);
-  padding: 0 24px;
+  padding: 0 max(24px, env(safe-area-inset-right, 0px)) 0 max(24px, env(safe-area-inset-left, 0px));
 }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
@@ -453,6 +464,7 @@ html[lang="en"] .en { display: inline; }
 .gallery-scroll {
   display: flex; gap: 18px; overflow-x: auto; padding: 6px 2px 18px;
   scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+  min-width: 0; max-width: 100%; width: 100%;
 }
 .gallery-scroll::-webkit-scrollbar { height: 8px; }
 .gallery-scroll::-webkit-scrollbar-thumb { background: var(--coral-light); border-radius: 99px; }
@@ -701,7 +713,8 @@ html[lang="en"] .en { display: inline; }
 }
 .hero-portrait:hover .greeting-bubble { opacity: 1; transform: scale(1) translateY(0); }
 .hero-portrait .greeting-bubble.show { opacity: 1; transform: scale(1) translateY(0); }
-.hero-portrait:hover .hero-photo { animation: wave .8s ease-in-out infinite; }
+.hero-portrait:hover .hero-photo,
+.hero-portrait.shaking .hero-photo { animation: wave .8s ease-in-out infinite; }
 @keyframes wave {
   0%, 100% { transform: translateY(0) rotate(-5deg); }
   25%      { transform: translateY(-9px) rotate(7deg); }
@@ -810,7 +823,7 @@ html[lang="en"] .en { display: inline; }
   .nav { padding: 0 16px; top: 12px; margin-top: 12px; }
   .nav-inner { padding: 8px 12px 8px 14px; }
   .nav-links { top: 54px; }
-  .hero { padding: 36px 0 48px; }
+  .hero { padding: 44px 0 48px; }
   .hero-title { font-size: 32px; }
   .hero-sub { font-size: 18px; }
   .hero-intro { font-size: 16px; }
@@ -821,7 +834,7 @@ html[lang="en"] .en { display: inline; }
   .hero-bubble.b1 { top: 8px; left: 4px; }
   .hero-bubble.b2 { bottom: 18px; right: 4px; }
   .open-sticker { left: 4px; bottom: 14px; font-size: 11px; padding: 7px 12px; }
-  .section { padding: 48px 0; }
+  .section { padding: calc(48px + env(safe-area-inset-top, 0px)) 0; }
   .section-head { margin-bottom: 28px; }
   .section-title { font-size: 26px; }
   .section-desc { font-size: 16px; }
@@ -964,6 +977,7 @@ html[lang="en"] .en { display: inline; }
   background: #fff; border-radius: var(--r-lg); padding: 22px;
   box-shadow: var(--sh-card); border: 1px solid rgba(255,255,255,0.7);
   display: grid; grid-template-columns: 420px 1fr; gap: 22px; align-items: center;
+  min-width: 0;               /* 关键：允许在窄屏收缩，内部 .tl-gallery 横滚才不撑破 */
 }
 .tl-card .tl-text { min-width: 0; }
 .tl-card .tl-title {
@@ -982,6 +996,7 @@ html[lang="en"] .en { display: inline; }
   border-radius: var(--r); background: var(--peach);
   padding: 12px; scroll-behavior: smooth;
   scrollbar-width: thin; scrollbar-color: var(--coral-light) transparent;
+  min-width: 0; max-width: 100%;
 }
 .tl-card .tl-gallery::-webkit-scrollbar { height: 8px; }
 .tl-card .tl-gallery::-webkit-scrollbar-thumb { background: var(--coral-light); border-radius: 99px; }
@@ -998,19 +1013,17 @@ html[lang="en"] .en { display: inline; }
   max-width: 100%; height: auto; max-height: 100%;
 }
 
-/* ----- 旅游图集：21 张横滚，完整展示 ----- */
-.gallery-scroll img {
-  width: 400px; height: 300px; object-fit: cover;
-}
+/* ----- 旅游图集：21 张横滚，完整展示（尺寸由基础样式 .gallery-scroll img 统一控制，避免覆盖移动端响应式） ----- */
 
 /* 响应式：时间轴栈化 */
 @media (max-width: 920px) {
-  .tl-row { grid-template-columns: 1fr; }
-  .tl-rail .tl-date { margin-bottom: 8px; }
+  .tl-row { grid-template-columns: 1fr; gap: 0; }
+  .tl-rail .tl-date { margin-bottom: 12px; }
   .tl-node { min-height: 24px; }
-  .tl-node .tl-line { bottom: 0; }
+  .tl-node .tl-line { left: 6px; top: 10px; bottom: 0; }
+  .tl-node .tl-dot { left: 2px; top: 6px; }
   .tl-node .tl-arrow { display: none; }
-  .tl-card { grid-template-columns: 1fr; }
+  .tl-card { grid-template-columns: 1fr; margin-left: 22px; }  /* 右移避开竖线，文字不贴边/不被压 */
 }
 @media (max-width: 560px) {
   .tl-card { padding: 18px; }

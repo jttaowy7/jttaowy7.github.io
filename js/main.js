@@ -142,6 +142,12 @@
     timer = null;
     if (bubble) bubble.classList.remove('show');
   });
+  // 点击人物 toggle 摇晃：点一下开始摇，再点一下停止
+  portrait.addEventListener('click', function (e) {
+    // 避免点击气泡或贴纸时误触发
+    if (e.target.closest('.hero-bubble') || e.target.closest('.open-sticker')) return;
+    portrait.classList.toggle('shaking');
+  });
 })();
 
 /* ---------- ⑥ 生活页兴趣卡：悬停打招呼气泡（跟随语言切换） ---------- */
