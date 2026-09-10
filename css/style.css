@@ -766,37 +766,58 @@ html[lang="en"] .en { display: inline; }
 /* =============================================================
    响应式 (Responsive)
    ============================================================= */
-@media (max-width: 920px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-portrait { min-height: 380px; order: -1; }
-  .pillars, .grid-2, .skill-grid, .contact-grid, .creation-grid { grid-template-columns: 1fr; }
-  .hobby-grid { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: 1fr; }
+/* ===== 响应式：iPad / 平板 / 手机 ===== */
+
+/* —— iPad 横屏及更窄（≤1024）：导航折叠为汉堡，避免 9 个链接挤压换行 —— */
+@media (max-width: 1024px) {
+  .nav { position: static; }
+  .nav-inner { position: relative; }
   .nav-links {
-    position: absolute; top: 64px; left: 0; right: 0;
+    position: absolute; top: 58px; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 4px;
-    background: rgba(255,255,255,0.96); backdrop-filter: blur(14px);
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.6);
     border-radius: var(--r); padding: 14px; box-shadow: var(--sh-nav);
-    display: none;
+    display: none; z-index: 80;
   }
   .nav-links.open { display: flex; }
   .nav-burger { display: inline-block; }
-  .nav { position: static; }
-  .nav-inner { position: relative; }
-  /* 新结构响应式 */
-  .edu-row, .bio-card { grid-template-columns: 1fr; }
+}
+
+/* —— 平板 / 手机（≤920）：Hero 单列，多列网格 → 单列，时间轴栈化 —— */
+@media (max-width: 920px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-portrait { min-height: 360px; order: -1; }
+  .pillars, .grid-2, .grid-3, .skill-grid, .contact-grid, .creation-grid { grid-template-columns: 1fr; }
+  .hobby-grid { grid-template-columns: repeat(2, 1fr); }
+  .data-grid { grid-template-columns: repeat(2, 1fr); }
+  .bio-card { grid-template-columns: 1fr; }
+  .bio-card .bio-avatar { width: 140px; height: 140px; font-size: 48px; }
+  .edu-row { grid-template-columns: 1fr; }
   .edu-row .col-meta { align-items: flex-start; }
   .milestone-block, .milestone-block.left-image { grid-template-columns: 1fr; }
   .milestone-block.left-image .ms-img { order: 1; }
   .milestone-block.left-image .ms-text { order: 0; }
-  .data-grid { grid-template-columns: repeat(2, 1fr); }
-  .bio-card .bio-avatar { width: 140px; height: 140px; font-size: 48px; }
+  .section { padding: 76px 0; }
 }
+
+/* —— 手机（≤560）：进一步收紧间距与字号 —— */
 @media (max-width: 560px) {
+  .container { padding: 0 18px; }
+  .nav { padding: 0 14px; }
+  .section { padding: 56px 0; }
+  .section-head { margin-bottom: 32px; }
+  .hero-title { font-size: 32px; }
+  .hero-portrait { min-height: 300px; }
+  .section-title { font-size: 26px; }
+  .pillar-title { font-size: 20px; }
   .hobby-grid { grid-template-columns: 1fr 1fr; }
   .data-grid { grid-template-columns: 1fr 1fr; }
-  .section { padding: 64px 0; }
-  .hero-title { font-size: 40px; }
+  .btn { padding: 10px 16px; font-size: 14px; }
+  .nav-actions { gap: 6px; }
+  .nav-actions .btn-cocoa { padding: 9px 12px; font-size: 13px; }
+  .footer-contact { gap: 8px 16px; font-size: 13px; }
 }
 
 /* =============================================================
