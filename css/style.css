@@ -298,8 +298,15 @@ html[lang="en"] .en { display: inline; }
 .card h3 { font-size: 21px; margin-bottom: 10px; }
 .card .muted { color: var(--ink-soft); font-size: 15px; }
 .tag {
-  display: inline-block; font-size: 12.5px; font-weight: 700; padding: 4px 12px;
-  border-radius: var(--r-pill); margin-bottom: 14px;
+  display: inline-block;
+  width: fit-content;
+  align-self: flex-start;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  margin-bottom: 10px;
 }
 .tag-blue { background: var(--card-blue); color: var(--tag-blue); }
 .tag-brown { background: var(--card-peach); color: var(--tag-brown); }
