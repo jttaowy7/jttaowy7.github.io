@@ -1,0 +1,92 @@
+WENYANG TAO
+ Shanghai, 201204 China   +86 17721198351   Email: 1989669223@qq.com
+EDUCATION
+Zhejiang University of Finance & Economics (ZUFE) | Hangzhou, CHN                                                     
+Sep 2022 - Jun 2026, Bachelor Degree of Economics     
+Major: Financial Engineering
+GPA: 4.03/5
+Main courses: Micro/Macroeconomics, Blockchain:Principle and Financial Application, Statistics, Econometrics, Securities Analysis and Operation Practice, Financial Econometrics and Its Applications, Corporate Finance, Cases in Financial Engineering, Financial Economics, Stochastic Processes 
+Nanyang Technological University, SG                              
+Jul 2025, Summer Program: Introduction to Data Science and Artificial Intelligence           
+Course Grade: A+ 
+Key Topics: Python-based curriculum covering big data, neural networks, and deep learning applications to develop data-driven research and decision-making capabilities
+Course Experience: Achieved perfect scores on two course assessments; collaborated on team project developing machine learning-based spam email detection research report, primarily responsible for data analysis and visualization components; participated in AI4X 2025 conference
+WORKING EXPERIENCE
+Shanghai Dewu Information Group Co., Ltd. | Shanghai, CHN
+Feb 2026 - May 2026, Strategy Operations Intern
+Designed and executed SQL queries to extract and cleanse GMV and core business metrics data, reduced data processing time by 30% and enabled daily performance tracking for external business units
+Performed multidimensional root cause analysis on Spring Launch and Lanhai projects through price elasticity modeling and user funnel breakdown; identified 15+ growth opportunities and delivered 5+ strategic reports to leadership
+Conducted competitive benchmarking and price anomaly detection across 300+ SKUs using statistical comparison methods; flagged 10+ irregular pricing scenarios and proposed corrective pricing strategies
+Developed real-time KPI monitoring dashboards and early-warning systems to track business anomalies and provide actionable insights for supply chain and conversion optimization
+BDO China Shu Lun Pan Certified Public Accountants LLP Zhejiang Branch | Hangzhou, CHN
+Jan 2025 - Apr 2025, Audit Intern
+Analyzed corporate financial statements and cash flow patterns to identify potential financial risk factors through monetary fund audit working papers and assessed enterprise financial health status
+Evaluated corporate financial compliance by reviewing over 500 financial vouchers using systematic audit procedures and ensured transaction legitimacy and adherence to financial regulatory requirements
+Conducted asset valuation work through fixed asset inventory and classification methods, analyzed asset utilization efficiency and return on investment ratios to support investment decision-making
+Assessed accuracy and completeness of corporate financial information disclosure by integrating financial data and performed trend analysis to provide analytical foundation for management decisions
+Orient Securities | Shanghai, CHN
+Jul 2024 - Aug 2024, Investment Research Intern
+Applied technical analysis methods to evaluate market trends by comparing stock price movements and trading volume changes, built tracking models to support trading strategy analysis
+Studied equity asset allocation strategies and assisted fund managers in portfolio construction research, supported risk assessment through systematic data collection and analysis
+Performed performance attribution calculations using multi-factor models (Fama-French models) and risk metrics (VaR calculations, Beta analysis), compiled quantitative analysis for senior analysts
+Attended 10+ roadshow presentations from asset management companies, analyzed alpha generation mechanisms of index-enhanced products and prepared research summaries for investment teams
+FINANCE & TECHNOLOGY TRAINING PROGRAMS
+Spam Detection Research Based on Machine Learning
+Jul 2025, NTU Summer Project
+Conducted exploratory data analysis on spam and non-spam email dataset, utilized correlation heatmaps and feature visualization to identify key spam indicators
+Engineered critical features through word frequency analysis and symbol pattern recognition, discovered high-frequency spam markers including special characters and promotional terms
+Developed machine learning models including Decision Tree, Random Forest, Naive Bayes, and XGBoost with Random Forest achieving optimal 95.6% accuracy
+Validated model performance through 10-fold cross-validation achieving 0.947 F1-score and implemented feature importance analysis to optimize model interpretability
+Alibaba Cloud "Yungong Kaiwu" AI Application Development & Data Analytics Bootcamp
+May 2025, Algorithm Engineer Track
+Built 3 AI applications using Alibaba Cloud Bailian platform interface, learned large language model integration workflows and cloud-based AI application deployment processes through guided tutorials
+Completed 2 data processing experiments using DataV visualization tools, practiced creating interactive dashboards and basic data pipeline configurations within cloud environment
+Applied pre-built model tuning interfaces and prompt optimization features available on Alibaba Cloud platform, learned to adjust model parameters through platform-provided tools and templates
+Submitted experimental reports for expert review, achieved "Excellent" rating in the assessment by Alibaba Cloud
+HSBC "Financial Lab" Training Program 
+May 2024 - Jun 2024, Wealth Management Specialist Track 
+Studied modern portfolio theory fundamentals and explored Standard & Poor's Wealth Pyramid Model, learned life-cycle investment principles and analyzed how theoretical frameworks guide real-world wealth management strategies
+Developed skills in cash flow projection techniques and risk tolerance assessment methods, practiced evaluating client financial health through balance sheet analysis and liquidity planning exercises
+Researched various investment vehicles including equities, bonds, mutual funds, and alternative investments, analyzed market trends and learned product selection criteria for different investment objectives
+Participated in mock client consultation sessions, practiced presenting investment recommendations and learned professional communication techniques for explaining complex financial concepts to diverse client backgrounds
+Hithink RoyalFlush & Pacific Securities Financial Professional Training Program 
+Mar 2024, Financial Analyst Track
+Acquired comprehensive knowledge of core financial theories and market operation mechanisms, mastered equity valuation methodologies and developed proficiency in financial statement interpretation and company research frameworks
+Specialized in K-line (candlestick) analysis and technical indicator interpretation, practiced identifying support/resistance levels, trend signals, and chart patterns, enhanced skills in market timing and price action analysis
+Conducted systematic factor research focusing on investment factors including P/E ratios, momentum, and volatility indicators, built quantitative models with position sizing rules and risk management parameters through statistical validation techniques
+Executed live market simulations and contributed to business process optimization initiatives through case study presentations, achieved top ranking in comprehensive evaluation and earned joint institutional certification
+QUANTITATIVE INVESTMENT RESEARCH
+LightGBM-Based Dynamic Multi-Factor Stock Selection Model for Quantitative Investment
+Mar 2025 - Jun 2025, Individual Study
+Built LightGBM-based quantitative model with 22-factor system (fundamental, technical, quantitative), applied Random Forest feature selection to reduce dimensionality to 8 factors and improved IC value by 40%
+Achieved 59.94% total returns and 30.78% excess returns with Sharpe ratio of 2.499, maximum drawdown of 13.52%, outperformed CSI 300 benchmark across all risk-adjusted metrics
+Implemented dynamic factor weighting system with monthly importance evaluation and quarterly optimization mechanism, used -5% market benchmark threshold for regime detection and adaptive strategy adjustment
+Developed Python-based trading framework with multi-layer stock screening from CSI 300 to 285±8 stocks, applied correlation matrix analysis to resolve multicollinearity and built automated risk management with 95% stop-loss
+Multi-Factor Quantitative Investment Strategy with Machine Learning Enhancement
+May 2025, Individual Study
+Designed 6-dimensional quantitative scoring system integrating value, quality, growth, and efficiency factors for A-share small-cap stock selection, established systematic screening methodology with ST stock filtration and fundamental analysis
+Enhanced model using Random Forest algorithm for dynamic factor weight optimization, implemented supervised learning with future returns as target variables to eliminate redundant indicators
+Combined multi-factor scores with Bollinger Bands mean reversion signals, implemented monthly screening filtering stocks with previous low below middle band to capture oversold opportunities
+Developed Python-based trading framework with 3-year backtesting, achieved 246.98% cumulative return, 53.57% annualized return, Alpha 0.527, and Sharpe ratio 1.495
+Implemented real-time limit-up monitoring with automated position adjustment, achieved 56.6% win rate, 2.369 profit-loss ratio, and 238.29% benchmark outperformance through weekly rebalancing
+Optical Module Industry Investment Strategy Research Project 
+July 2023, Core Member
+Conducted comprehensive research on optical module industry covering telecommunications, data centers, and consumer electronics applications, analyzed market growth trends and government policy support
+Established systematic screening process from 50 A-share optical module companies to final 20-stock investment pool, excluded ST stocks and applied multi-factor model using P/E, P/S, P/B ratios, RSI, and trading volume metrics
+Designed Bollinger Bands-based trading strategy with specific buy/sell signals for stock price breakouts above/below middle and upper/lower bands, demonstrated practical implementation approach
+Evaluated multiple risk factors including technological disruption, market volatility, supply chain instability, policy changes, and industry standard compliance challenges affecting optical module sector investments
+AWARDS & HONOURS
+Academic Excellence Awards
+Third-Class Merit Scholarship | Dec 2024 & Sep 2025
+Ethics & Character Excellence Scholarship | Dec 2023
+Competition Awards
+First Prize, 20th Zhejiang Provincial University Student Securities Investment Competition (Quantitative Trading Division) | July 2025
+Runner-up Team & Provincial Excellence Team, Innovative Marketing Entrepreneurship Bootcamp | Dec 2023
+Merit Award, 4th "ZUFE Planning" Land Resources Management Knowledge Contest | Dec 2023
+Third Prize, Zhejiang Securities Investment Competition (Investment Strategy Division) | July 2023
+Excellence Award, APC "Foreign Language Award" National College English Translation Contest (Chinese-to-English Category) | Jan 2023
+ADDITIONAL
+Language Fluency: Chinese (Native), English 
+Tech Skills: Python (Pandas, NumPy, Scikit-learn, LightGBM), SQL, Stata, JoinQuant API, Random Forest, Financial Modeling
+Leadership: Student Union Finance School Officer (Sep 2022 - Jun 2023), Academic Department Finance Society Officer (Sep 2022 - Sep 2023), Mental Health Counseling Station Deputy Director (Jun 2023 - Jul 2024)
+Hobbies: Track & Field, Soccer, Go (Amateur 1st Dan)

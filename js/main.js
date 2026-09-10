@@ -103,21 +103,28 @@
   });
 })();
 
-/* ---------- ⑤-b 首页人物：鼠标经过时互动台词多样轮换（带表情） ---------- */
+/* ---------- ⑤-b 首页人物：鼠标经过时互动台词多样轮换（带表情，跟随语言切换） ---------- */
 (function () {
   var portrait = document.getElementById('heroPortrait');
   var bubble = document.getElementById('greetingBubble');
   if (!portrait || !bubble) return;
   // 互动台词库：随鼠标经过人物，轮换打招呼/介绍语（多样化 + 表情）
-  var words = [
+  var zhWords = [
     '你好，我是陶文洋 👋',
-    'Hi，I am Wenyang 👋',
     '一起聊聊机会吧 ✨👋',
     '欢迎来到我的网站 ✨',
     '很高兴认识你 🤝'
   ];
+  var enWords = [
+    'Hi, I am Jason Tao 👋',
+    "Let's talk opportunities ✨👋",
+    'Welcome to my website ✨',
+    'Nice to meet you 🤝'
+  ];
   var idx = 0, timer = null;
   function showNext() {
+    var isEn = document.documentElement.getAttribute('lang') === 'en';
+    var words = isEn ? enWords : zhWords;
     bubble.textContent = words[idx % words.length];
     bubble.classList.add('show');
     idx++;
@@ -134,15 +141,18 @@
   });
 })();
 
-/* ---------- ⑥ 生活页兴趣卡：悬停打招呼气泡 ---------- */
+/* ---------- ⑥ 生活页兴趣卡：悬停打招呼气泡（跟随语言切换） ---------- */
 (function () {
   var cards = document.querySelectorAll('.hobby-card');
   if (!cards.length) return;
-  var greetings = ['⚽ 一起踢球！', '🏀 投个三分！', '🎾 上场啦！', '🛹 冲就完事！'];
+  var zhGreetings = ['⚽ 一起踢球！', '🏀 投个三分！', '🎾 上场啦！', '🛹 冲就完事！'];
+  var enGreetings = ['⚽ Let\'s play!', '🏀 Shoot a three!', '🎾 Game on!', '🛹 Just go for it!'];
   cards.forEach(function (card, i) {
     var b = document.createElement('span');
     b.className = 'hobby-bubble';
-    b.textContent = greetings[i % greetings.length];
+    b.dataset.zh = zhGreetings[i % zhGreetings.length];
+    b.dataset.en = enGreetings[i % enGreetings.length];
+    b.textContent = document.documentElement.getAttribute('lang') === 'en' ? b.dataset.en : b.dataset.zh;
     card.appendChild(b);
   });
 })();

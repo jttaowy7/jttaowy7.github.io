@@ -1,0 +1,68 @@
+Wenyang Tao
+tctwyoiz3456789@outlook.com
+ 
++852 55775372,+86 17721198351
+ 
+tctwyoiz34
+ 
+HongKong
+ 
+EDUCATION
+City University of Hong Kong, Master of Science in Financial Engineering 08/2026 – Present  | HongKong
+•Main courses: Corporate Finance, Stochastic Calculus for Finance, Derivatives and Risk Management
+Zhejiang University of Finance & Economics
+Bachelor of Economics in Financial Engineering
+09/2022 – 06/2026  | Hangzhou
+•GPA: 4.03/5.0(Top 20%)
+•HONOURS:Third-Class Merit Scholarship(2024,2025), Ethics & Character Excellence Scholarship(2023), 20th Zhejiang 
+Provincial University Student Securities Investment Competition-Quantitative Trading Division(First Prize,2025)
+PROFESSIONAL EXPERIENCE
+Shanghai Dewu Information Group Co., Ltd. (Brand: Poizon App)
+Strategy Operations Intern
+02/2026 – 05/2026  | Shanghai
+•Track and monitor core business metrics including GMV of Outdoor & Sports Division; extract and aggregate industry 
+indicator data via SQL to support business decision-making
+•Participated in Spring New Product Launch and Blue Ocean strategic projects, conducted targeted analysis on price 
+fluctuation and user conversion, delivered data insights and operational optimization suggestions
+•Conducted competitive pricing research and price band comparison on Xiaohongshu hot commodities to provide data 
+support for merchandise pricing, price competitiveness improvement and category competition strategy formulation
+•Assisted in establishing the business data analysis system and developing data visualization dashboards, boosting efficiency 
+of indicator monitoring and abnormal early warning; delivered commercial strategies covering supply allocation and traffic 
+conversion to drive revenue growth
+BDO China Shu Lun Pan Certified Public Accountants LLP Zhejiang Branch
+Audit Intern
+01/2025 – 04/2025  | Hangzhou
+•Prepared audit working papers for monetary funds, fixed-assets and employee compensation accounts; inspected more 
+than 800 accounting vouchers with zero material misstatement, supported audit evidence aggregation and senior auditor 
+review procedures.
+•Completed physical inventory of fixed assets for 3 enterprises, categorized assets and finalized fixed asset inventory 
+confirmation forms
+•Conducted asset valuation work through fixed asset inventory and classification methods, analyzed asset utilization 
+efficiency and return on investment ratios to support investment decision-making
+•Collaborated with audit seniors to cross-verify supporting documents, flagged potential accounting inconsistency risks; 
+standardized sorting & indexing of physical inventory files to shorten team review turnaround time.
+Orient Securities, Investment Research Intern 07/2024 – 08/2024  | Shanghai
+•Monitored and analyzed daily trends of major market indices (CSI 300, STAR 50), tracked real trading accounts 
+independently and optimized investment strategies, lifting research efficiency of stocks & index funds by 20%
+•Supported portfolio allocation for fund managers and evaluated investment returns; drafted roadshow and field research 
+reports to offer logical basis for investment decisions
+•Joined on-site investigations of listed companies and public/private fund institutions, drafted 2 roadshow presentation 
+decks and 1 field research reports on listed companies, providing clear logical justifications for final investment decisions.
+PROJECTS
+Nanyang Technological University Summer School, Introduction to Data Science & AI 06/2025 – 07/2025
+•Achieved perfect scores on two course assessments (A); participated in AI4X 2025 conference
+•Completed research project "Spam Detection Research Based on Machine Learning": Performed EDA on email datasets via 
+correlation heatmaps and feature visualization, built word-frequency-based features capturing spam-specific symbolic and 
+promotional markers. Trained multiple ML models including Random Forest (95.6% accuracy), validated performance with 
+10-fold cross-validation (0.947 F1-score) and analyzed feature importance to enhance model interpretability.
+HSBC "Financial Lab" Training Program, Wealth Management Specialist Track 05/2024 – 06/2024
+•Researched asset allocation models and designed personalized investment portfolios to balance return and risk; mastered 
+cash flow management and risk appetite assessment methodologies
+•Completed family wealth simulation sandbox exercises to analyze household financial demands across life cycles and 
+dynamically adjust allocation ratios of stocks, bonds and other assets
+ADDITIONAL
+•Languages: Chinese (Native), English(Proficient), Cantonese(Beginner)
+•Tech Skills:MS Office, Python (Pandas, NumPy, LightGBM), SQL, Stata, JoinQuant API, Financial Modeling, Vibe coding
+•Hobbies: Track & Field, Soccer, Basketball, Tennis, Skateboarding, Go (Amateur 1st Dan), Music
+•My personal website: jttaowy7.github.io 
+tctwyoiz3456789@outlook.com
