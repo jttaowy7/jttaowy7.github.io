@@ -166,3 +166,57 @@
   });
 })();
 
+/* ---------- ⑦ 简历下载选择器：点击「下载简历」弹出 中/英 选择 ---------- */
+(function () {
+  var EN_PDF = 'assets/resume/Tao_Wenyang_Resume.pdf';
+  var CN_PDF = 'assets/resume/Tao_Wenyang_Resume_CN.pdf';
+  var triggers = document.querySelectorAll('a[href="' + EN_PDF + '"]');
+  if (!triggers.length) return;
+
+  // 给所有触发按钮加标记（用于显示下拉箭头）
+  triggers.forEach(function (t) { t.classList.add('resume-trigger'); });
+
+  // 弹窗只构建一次，挂到 body
+  var modal = document.createElement('div');
+  modal.className = 'resume-modal';
+  modal.id = 'resumeModal';
+  modal.setAttribute('aria-hidden', 'true');
+  modal.innerHTML =
+    '<div class="resume-modal__overlay" data-close></div>' +
+    '<div class="resume-modal__card" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">' +
+      '<button class="resume-modal__close" type="button" data-close aria-label="关闭">×</button>' +
+      '<p class="resume-modal__title" id="resumeModalTitle"><span class="zh">选择简历版本</span><span class="en">Choose Resume Version</span></p>' +
+      '<p class="resume-modal__sub"><span class="zh">请选择语言后下载</span><span class="en">Pick a language to download</span></p>' +
+      '<div class="resume-modal__opts">' +
+        '<a class="resume-opt" href="' + CN_PDF + '" download>' +
+          '<span class="resume-opt__icon">📄</span>' +
+          '<span class="resume-opt__txt"><b>中文简历</b><i>Chinese · PDF</i></span>' +
+        '</a>' +
+        '<a class="resume-opt" href="' + EN_PDF + '" download>' +
+          '<span class="resume-opt__icon">📄</span>' +
+          '<span class="resume-opt__txt"><b>English Resume</b><i>英文 · PDF</i></span>' +
+        '</a>' +
+      '</div>' +
+    '</div>';
+  document.body.appendChild(modal);
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  triggers.forEach(function (t) { t.addEventListener('click', openModal); });
+  modal.querySelectorAll('[data-close]').forEach(function (el) { el.addEventListener('click', closeModal); });
+  modal.querySelectorAll('.resume-opt').forEach(function (opt) {
+    opt.addEventListener('click', function () { setTimeout(closeModal, 200); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+})();
+

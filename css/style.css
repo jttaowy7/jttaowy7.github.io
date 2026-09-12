@@ -1094,3 +1094,64 @@ html[lang="en"] .en { display: inline; }
   width: auto; height: 240px; max-width: 420px; object-fit: contain;
   background: #fff; border: 1px solid var(--peach); border-radius: var(--r);
 }
+
+/* ===== 简历下载选择器弹窗（点击「下载简历」弹出 中/英 选择） ===== */
+.resume-modal {
+  position: fixed; inset: 0; z-index: 9999;
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.resume-modal.open { display: flex; }
+.resume-modal__overlay {
+  position: absolute; inset: 0;
+  background: rgba(60, 38, 28, 0.38);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.resume-modal__card {
+  position: relative; z-index: 1;
+  width: min(400px, 92vw);
+  background: #fffaf7;
+  border-radius: 24px;
+  padding: 30px 26px 26px;
+  box-shadow: 0 24px 60px rgba(92, 58, 46, 0.28);
+  text-align: center;
+  animation: resumePop .26s cubic-bezier(.2, .8, .25, 1);
+}
+@keyframes resumePop {
+  from { opacity: 0; transform: translateY(14px) scale(.97); }
+  to { opacity: 1; transform: none; }
+}
+.resume-modal__close {
+  position: absolute; top: 12px; right: 16px;
+  width: 32px; height: 32px; border: none; cursor: pointer;
+  background: transparent; color: #b08968; font-size: 24px; line-height: 1;
+  border-radius: 50%; transition: background .18s ease;
+}
+.resume-modal__close:hover { background: rgba(176, 137, 104, .14); }
+.resume-modal__title { margin: 0 0 6px; font-size: 20px; font-weight: 700; color: #5c3a2e; }
+.resume-modal__sub { margin: 0 0 22px; font-size: 13px; color: #a08a7d; }
+.resume-modal__opts { display: flex; flex-direction: column; gap: 12px; }
+.resume-opt {
+  display: flex; align-items: center; gap: 14px;
+  padding: 15px 18px; border-radius: 16px; text-decoration: none;
+  background: linear-gradient(135deg, #fff5f0, #ffe9df);
+  border: 1.5px solid #ffd8c7;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  text-align: left;
+}
+.resume-opt:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(238, 130, 102, .26);
+  border-color: #ee8266;
+}
+.resume-opt__icon { font-size: 26px; line-height: 1; }
+.resume-opt__txt { display: flex; flex-direction: column; }
+.resume-opt__txt b { font-size: 16px; font-weight: 700; color: #5c3a2e; }
+.resume-opt__txt i { font-size: 12px; font-style: normal; color: #b08968; }
+/* 触发按钮下拉箭头提示（由 JS 给下载按钮加 .resume-trigger 类） */
+.resume-trigger::after { content: " ▾"; font-size: .82em; opacity: .8; }
+@media (prefers-reduced-motion: reduce) {
+  .resume-modal__card { animation: none; }
+  .resume-opt { transition: none; }
+}
